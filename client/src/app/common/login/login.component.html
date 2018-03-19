@@ -1,0 +1,74 @@
+<div class="m-grid m-grid--hor m-grid--root m-page">
+  <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-grid--tablet-and-mobile m-grid--hor-tablet-and-mobile m-login m-login--1 m-login--signin" id="m_login">
+    <div class="m-grid__item m-grid__item--order-tablet-and-mobile-2 m-login__aside">
+      <div class="m-stack m-stack--hor m-stack--desktop">
+        <div class="m-stack__item m-stack__item--fluid">
+          <div class="m-login__wrapper">
+            <div class="m-login__logo">
+              <a href="#">
+                <img src="../../../assets/images/SDMS_logo.png">
+              </a>
+            </div>
+            <div class="m-login__signin">
+              <div class="m-login__head">
+                <h3 class="m-login__title">
+                </h3>
+              </div>
+              <form class="m-login__form m-form" [formGroup]="loginForm" novalidate>
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input" type="text" placeholder="Unique ID" name="email" autocomplete="off" formControlName= "username" [(ngModel)]="userCredentials.userName">
+                </div>
+                <app-form-control-messages [control]="loginForm.controls.username" [name]="'username'"></app-form-control-messages>
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password" formControlName = "password" [(ngModel)]="userCredentials.password">
+                </div>
+                <app-form-control-messages [control]="loginForm.controls.password" [name]="'password'"></app-form-control-messages>
+                <div class="row m-login__form-sub">
+                  <div class="col m--align-right">
+                    <a href="javascript:;" id="m_login_forget_password"  (click)="forgetPassword()" class="m-link">
+                      Forget Password ?
+                    </a>
+                  </div>
+                </div>
+                <div class="m-login__form-action">
+                  <button id="m_login_signin_submit" class="btn btn-focus m-btn--pill btn-login" [disabled]="!loginForm.valid"  (click)="doLogin()">
+                    Sign In
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="m-stack__item m-stack__item--center">
+          <div class="m-login__account">
+            <span class="m-login__account-msg">
+              Don't have an account yet ?
+            </span>
+            &nbsp;&nbsp;
+            <a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link" (click)="goToRegistration()">
+              Register Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url(../../../../assets/images/rightSide.png">
+      <div class="m-grid__item m-grid__item--left">
+        <h3 class="m-login__welcome">
+          Login
+        </h3>
+        <p class="m-login__msg">
+          What do i  do here? <br>
+          Here you need to login with<br>Unique Id you can have either it can be TP_ID,TC_ID etc.
+          <br><br>
+          What next?<br>
+          So you will be taken to Skill<br>Developement and Management Portal.
+        </p>
+        <div class="login-right">
+          <h3 class="help-text">Need Help? Call us n 1800-123-9626</h3><br>
+          <button class="btn btn-focus  m-btn--pill btn-back">Back to Homepage</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

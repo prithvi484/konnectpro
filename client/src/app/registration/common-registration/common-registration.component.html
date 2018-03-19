@@ -1,0 +1,169 @@
+<div class="m-grid m-grid--hor m-grid--root m-page">
+  <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-grid--tablet-and-mobile m-grid--hor-tablet-and-mobile m-login m-login--1 m-login--signin"
+    id="m_login">
+    <div class="m-grid__item m-grid__item--order-tablet-and-mobile-2 m-login__aside">
+      <!-- registration details -->
+      <div *ngIf="showform == 'registration'" class="m-stack m-stack--hor m-stack--desktop">
+        <div class="m-stack__item m-stack__item--fluid">
+          <div class="m-login__wrapper">
+            <div class="m-login__logo">
+              <a href="#">
+                <img src="../../../assets/images/SDMS_logo.png">
+              </a>
+            </div>
+            <div class="m-login__signin">
+              <div class="m-login__head">
+                <h3 class="m-login__title">
+                </h3>
+              </div>
+              <form class="m-login__form m-form" [formGroup]="userDetailsForm">
+                <div class="form-group m-form__group">
+                  <select class="form-control m-select" id="exampleSelect1" formControlName ="role" [(ngModel)]="userAccount.role">
+                    <option value="">Select User Type</option>
+                    <option value="Training Partner">Training Partner</option>
+                  </select>
+                  <app-form-control-messages [control]="userDetailsForm.controls.role" [name]="'role'"></app-form-control-messages>
+                </div>
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input" type="text" placeholder="Name" name="name" formControlName ="name" [(ngModel)]="userAccount.name" autocomplete="off">
+                  <app-form-control-messages [control]="userDetailsForm.controls.name" [name]="'name'"></app-form-control-messages>
+                </div>
+                
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input" type="text" placeholder="Email Address" name="email" formControlName ="email" [(ngModel)]="userAccount.email">
+                  <app-form-control-messages [control]="userDetailsForm.controls.email" [name]="'email'"></app-form-control-messages>
+                </div>
+                <div class="form-group m-form__group">
+                  <input class="form-control m-input" type="number" placeholder="Mobile Number" name="mobile" maxlength="10" formControlName ="mobile" [(ngModel)]="userAccount.phone.mobile">
+                  <app-form-control-messages [control]="userDetailsForm.controls.mobile" [name]="'mobile'"></app-form-control-messages>
+                </div>
+                
+                <div class="m-login__form-action ">
+                  <button id="m_login_signin_submit" class="btn btn-focus  m-btn--pill   btn-login" [disabled]="!userDetailsForm.valid" (click)="registration()">
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="m-stack__item m-stack__item--center">
+          <div class="m-login__account">
+            <span class="m-login__account-msg">
+                Already have an account ? ?
+            </span> &nbsp;&nbsp;
+            <a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link" (click)="goTOLogin()">
+              Login  Now
+            </a>
+          </div>
+          <div class="">
+            <span class="">© 2018 Copyright Transneuron Technologies pvt Ltd.  ·  Terms of Service  ·  Privacy  </span>
+          </div>
+        </div>
+      </div>
+      <!-- generate otp and password -->
+      <div *ngIf="showform == 'otp'" class="m-stack m-stack--hor m-stack--desktop">
+          <div class="m-stack__item m-stack__item--fluid">
+            <div class="m-login__wrapper">
+              <div class="m-login__logo">
+                <a href="#">
+                  <img src="../../../assets/images/SDMS_logo.png">
+                </a>
+              </div>
+              <div class="m-login__signin">
+                <div class="m-login__head">
+                  <h3 class="m-login__title">
+                  </h3>
+                </div>
+                <form class="m-login__form m-form" [formGroup]="otpForm">
+                  <div class="form-group m-form__group">
+                      <input class="form-control m-input" type="text" maxlength="6" placeholder="email OTP" name="eOTP" formControlName ="emailOTP" [(ngModel)]="userAccount.emailOTP" autocomplete="off">
+                    <app-form-control-messages [control]="otpForm.controls.emailOTP" [name]="'Email OTP'"></app-form-control-messages>
+                  </div>
+                  <div class="form-group m-form__group">
+                    <input class="form-control m-input" type="text" maxlength="6" placeholder="mobile OTP" name="mOTP" formControlName ="mobileOTP" [(ngModel)]="userAccount.mobileOTP" autocomplete="off">
+                    <app-form-control-messages [control]="otpForm.controls.mobileOTP" [name]="'Mobile OTP'"></app-form-control-messages>
+                  </div>
+                  
+                  <div class="m-login__form-action ">
+                    <button id="m_login_signin_submit" class="btn btn-focus  m-btn--pill btn-login" [disabled]="!otpForm.valid" (click)="verifyOTP()">
+                      Verify
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="m-stack__item m-stack__item--center">
+            <div class="m-login__account">
+              <span class="m-login__account-msg">
+                  Didn’t Recieve OTP ?
+              </span> &nbsp;&nbsp;
+              <a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link" (click)="reGenerateOTP()">
+                  Re-Generate OTP
+              </a>
+            </div>
+            <div class="">
+              <span class="">© 2018 Copyright Transneuron Technologies pvt Ltd.  ·  Terms of Service  ·  Privacy </span>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="showform == 'success'" class="m-stack m-stack--hor m-stack--desktop">
+        <div class="m-stack__item m-stack__item--fluid">
+          <div class="m-login__wrapper">
+            <div class="m-login__logo">
+              <a href="#">
+                <img src="../../../assets/images/SDMS_logo.png">
+              </a>
+            </div>
+            <div class="m-login__signin">
+              <div class="m-login__head">
+                <h3 class="m-login__title">
+                </h3>
+              </div>
+              <div class="text-Center sucess-msg">
+                We have sent the <span style="font-weight:bold">TP Login ID</span>  and <span style="font-weight:bold">password</span> to the 
+                registered email address and Login  with those on to our 
+                portal .
+              </div>
+              <div class="m-login__form-action text-center  ">
+                <button id="m_login_signin_submit" class="btn btn-focus  m-btn--pill btn-login" routerLink="/">
+                  Go to Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-stack__item m-stack__item--center">
+          <!-- <div class="m-login__account">
+            <span class="m-login__account-msg">
+                Didn’t Recieve OTP ?
+            </span> &nbsp;&nbsp;
+            <a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link" (click)="reGenerateOTP()">
+                Re-Generate OTP
+            </a>
+          </div> -->
+          <div class="">
+            <span class="">© 2018 Copyright Transneuron Technologies pvt Ltd.  ·  Terms of Service  ·  Privacy  </span>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content"
+      style="background-image: url(../../../assets/images/rightSide.png);">
+      <div class="m-grid__item m-grid__item--left">
+        <h3 class="m-login__welcome">
+          Register Now
+        </h3>
+        <p class="m-login__msg">
+          What do i do here? <br> Here you need to login with<br>Unique Id you can have either it can be TP_ID,TC_ID etc.
+          <br><br> What next?<br> So you will be taken to Skill<br>Developement and Management Portal.
+        </p>
+        <div class="login-right">
+          <h3 class="help-text">Need Help? Call us n 1800-123-9626</h3><br>
+          <button class="btn btn-focus  m-btn--pill btn-back">Back to Homepage</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

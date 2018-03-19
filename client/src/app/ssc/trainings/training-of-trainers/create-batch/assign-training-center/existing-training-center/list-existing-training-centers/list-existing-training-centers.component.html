@@ -1,0 +1,37 @@
+<div class="col-sm-12">
+	<div class="col-sm-6 form-group m-form__group">
+		<div class="input-group">
+			<input type="text" class="form-control m-input" [(ngModel)]="searchKeyWord" placeholder="search by keyword" />
+			<div class="input-group-append">
+				<span class="input-group-text" class="btn btn-primary">
+					Search
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<table class="table table-striped">
+		<tr>
+			<th>Training Partner</th>
+			<th>Training Center</th>
+			<th>State, District</th>
+			<th>Sector, Sub-Sector</th>
+			<th>Job Role</th>
+			<th></th>
+		</tr>
+		<tr *ngFor="let searchResult of searchData|search:searchKeyWord">
+			<td>{{searchResult.userName}}</td>
+			<td>{{searchResult.trainingPartner.name}}</td>
+			<td>{{searchResult.address.state.name}}, {{searchResult.address.district.name}}</td>
+			<td>{{searchResult.sector.name}}, {{searchResult.subSector.name}}</td>
+			<td>{{searchResult.jobRoles[0].qp}}</td>
+			<td>
+				<a href="#" (click)="selectTrainingCenter($event, searchResult)">Select</a>
+			</td>
+		</tr>
+	</table>
+	<div *ngIf="length">
+		<app-pagination [count]=length (pageNumber)="getmasterTrainers($event)"></app-pagination>
+	</div>
+</div>

@@ -1,0 +1,100 @@
+<div>
+	<h1>Schedule Batch</h1>
+</div>
+<div [hidden]="!hideElement">
+	<form [formGroup]="scheduleBatchForm" (ngSubmit)="scheduleBatch()" novalidate>
+		<label>Duration</label>
+		<div class="row">
+			<div class="col-md-6 form-group m-form__group">
+				<div class="input-group date">
+					<input type="date" class="form-control m-input" formControlName="startDate" id="m_datepicker_3" />
+					<div class="input-group-append">
+						<span class="input-group-text">
+							<i class="la la-calendar"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 form-group m-form__group">
+				<div class="input-group date">
+					<input type="date" class="form-control m-input" formControlName="endDate" id="m_datepicker_3" />
+					<div class="input-group-append">
+						<span class="input-group-text">
+							<i class="la la-calendar"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group m-form__group col-md-6">
+				<div class="form-group m-form__group row">
+					<label class="col-form-label col-lg-3 col-sm-12">
+						No. of hours per day :
+					</label>
+					<div class="col-lg-9 col-md-9 col-sm-12">
+						<select class="form-control m-input" formControlName="hours">
+							<option [ngValue]=2>2</option>
+							<option [ngValue]=4>4</option>
+							<option [ngValue]=8>8</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<label>Batch</label>
+		<div class="row">
+			<div class="form-group col-md-6">
+				<select class="form-control m-input" formControlName="batchSize">
+					<option disabled>select the batch size</option>
+					<option [ngValue]=10>10</option>
+					<option [ngValue]=20>20</option>
+					<option [ngValue]=30>30</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group m-form__group col-md-6">
+				<label for="exampleInputEmail1">
+					UPLOAD SUPPORTING DOCUMENT(ONLY PDF)
+				</label>
+				<div class="custom-file">
+					<input #fileInput type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)">
+					<label class="custom-file-label" for="customFile">
+						{{file.name}}
+					</label>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<div>
+					<button class="btn btn-defult" (click)="removeFile()">Remove</button>
+					<button class="btn btn-primary" (click)="uploadFile()">Upload</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+			</div>
+			<div class="col-md-6">
+				<button type="submit" class="btn btn-primary btn-large">SUBMIT TO TC FOR ACCEPTANCE</button>
+			</div>
+		</div>
+	</form>
+</div>
+<div [hidden]="hideElement">
+	<p class="text-center">Batch is scheduled and send to Trining Center for Acceptance</p>
+</div>
+<!-- <div class="form-group m-form__group row">
+		<label class="col-form-label col-lg-3 col-sm-12">
+			Input Group Setup
+		</label>
+		<div class="col-lg-4 col-md-9 col-sm-12">
+			<div class="input-group date">
+				<input type="text" class="form-control m-input" readonly placeholder="Select date" id="m_datepicker_2"/>
+				<div class="input-group-append">
+					<span class="input-group-text">
+						<i class="la la-calendar-check-o"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div> -->

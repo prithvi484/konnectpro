@@ -1,0 +1,725 @@
+<!-- begin:: Page -->
+<div class="m-grid m-grid--hor m-grid--root m-page">
+  <!-- begin::Header -->
+  <header class="m-grid__item		m-header top-header-only " data-minimize-offset="200" data-minimize-mobile-offset="200">
+    <div class="m-header__top">
+      <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+        <div class="m-stack m-stack--ver m-stack--desktop">
+          <!-- begin::Brand -->
+          <div class="m-stack__item m-brand">
+            <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
+              <div class="m-stack__item m-stack__item--middle m-brand__logo">
+                <a href="?page=index&amp;demo=demo5" class="m-brand__logo-wrapper">
+                  <img alt="" src="../../../../assets/images/SDMS_logo.png">
+                </a>
+              </div>
+              <div class="m-stack__item m-stack__item--middle m-brand__tools">
+                <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push" data-dropdown-toggle="click"
+                  aria-expanded="true">
+                  <a href="#" class="m-stack__item m-stack__item--middle m-brand__logo">
+                    <span>
+                      <img alt="" src="../../../../assets/images/NSDC_Logo.png">
+                    </span>
+                  </a>
+                </div>
+
+                <!-- BEGIN: Responsive Aside Left Menu Toggler -->
+                <a href="javascript:;" id="m_aside_left_offcanvas_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
+                  <span></span>
+                </a>
+                <!-- END -->
+
+
+                <!-- begin::Responsive Header Menu Toggler-->
+                <!-- <a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
+                <span></span>
+                </a> -->
+                <!-- end::Responsive Header Menu Toggler-->
+
+
+                <!-- begin::Topbar Toggler-->
+                <!-- <a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+                <i class="flaticon-more"></i>
+                </a> -->
+                <!--end::Topbar Toggler-->
+              </div>
+            </div>
+          </div>
+          <!-- end::Brand -->
+          <!-- begin::Topbar -->
+          <div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+            <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+              <div class="m-stack__item m-topbar__nav-wrapper">
+                <ul class="m-topbar__nav m-nav m-nav--inline">
+                  <li class="m-nav__item  	m-dropdown--mobile-full-width">
+                    <a class="m-nav__link">
+                      <span class="">
+                        <span class="m-stack__item--middle header-right-button">
+                          <button class="btn next" (click)="previous()" *ngIf="currentForm!=0">Previous</button>
+                        </span>
+                        <span class="m-stack__item--middle header-right-button">
+                          <button class="btn next" (click)="next()">Next</button>
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end::Topbar -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end::Header -->
+  <!-- begin::Body -->
+
+  <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop 	m-container m-container--responsive m-container--xxl m-page__container m-body">
+
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+      <i class="la la-close"></i>
+    </button>
+
+    <div id="m_aside_left" class="m-grid__item m-aside-left ">
+      <!-- BEGIN: Aside Menu -->
+      <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-light m-aside-menu--submenu-skin-light " data-menu-vertical="true"
+        data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+
+        <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+          <div class="m-portlet__body">
+            <h4 class="aside-header">Training Partner Registration</h4>
+            <div class="m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide" data-scrollbar-shown="true" data-scrollable="true" data-max-height="380"
+              style="overflow: visible;  position: relative; padding-top:25px;">
+              <!--Begin::Timeline 2 -->
+              <div class="m-timeline-2">
+
+                <div class="m-timeline-2__items  m--padding-top-25 m--padding-bottom-30">
+                  <div class="m-timeline-2__item">
+                    <span class="m-timeline-2__item-time">
+
+                    </span>
+                    <div class="m-timeline-2__item-cricle">
+                      <i class="fa fa-genderless m--font-brand"></i>
+                    </div>
+                    <div class="m-timeline-2__item-text m-timeline-2__item-text--bold" [style.color]="tpSideBarTextColor.generalFormColor">
+                      TRAINING PARTNER DETAILS
+                      <div class="m-timeline-2__item-text  m--padding-top-5 leftSide-Padd" [style.color]="tpSideBarTextColor.generalFormColor">
+                        Type of Organisation
+                        <br> Year and Certificate of Establishment
+                        <br> Website and Landline Number
+                        <br> Name of CEO/MD/Head
+                        <br> Email of CEO/MD/Head
+                        <br> Mobile No. of CEO/MD/Head
+                        <br> Name of Authorised Signatory
+                        <br> Email ID of Authorised Signatory
+                        <br> Mobile No. of Authorised SIgnatory
+                        <br> Name of the SPOC
+                        <br> Email ID of the SPOC
+                        <br> Mobile No. of SPOC
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-timeline-2__item m--margin-top-30">
+                    <span class="m-timeline-2__item-time">
+
+                    </span>
+                    <div class="m-timeline-2__item-cricle">
+                      <i class="fa fa-genderless m--font-brand"></i>
+                    </div>
+                    <div class="m-timeline-2__item-text m-timeline-2__item-text--bold" [style.color]="tpSideBarTextColor.addressFormColor">
+                      ADDRESS
+                      <div class="m-timeline-2__item-text  m--padding-top-5 leftSide-Padd" [style.color]="tpSideBarTextColor.addressFormColor">
+                        Address Lines
+                        <br> Sub District (Tehsil/Mandal)
+                        <br> Landmark
+                        <br> Address Proof
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-timeline-2__item m--margin-top-30">
+                    <span class="m-timeline-2__item-time">
+
+                    </span>
+                    <div class="m-timeline-2__item-cricle">
+                      <i class="fa fa-genderless m--font-brand"></i>
+                    </div>
+                    <div class="m-timeline-2__item-text m-timeline-2__item-text--bold" [style.color]="tpSideBarTextColor.financeFormColor">
+                      FINANCIAL
+                      <div class="m-timeline-2__item-text  m--padding-top-5 leftSide-Padd" [style.color]="tpSideBarTextColor.financeFormColor">
+                        Annual Turnover Details
+                        <br> CA Certificate
+                        <br> GST Account Number
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-timeline-2__item m--margin-top-30">
+                    <span class="m-timeline-2__item-time">
+
+                    </span>
+                    <div class="m-timeline-2__item-cricle">
+                      <i class="fa fa-genderless m--font-brand"></i>
+                    </div>
+                    <div class="m-timeline-2__item-text m-timeline-2__item-text--bold" [style.color]="tpSideBarTextColor[3]">
+                      DECLARATION & PAYMENT
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End::Timeline 2 -->
+            </div>
+          </div>
+        </ul>
+      </div>
+      <!-- END: Aside Menu -->
+    </div>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+      <!-- END: Subheader -->
+      <div class="m-content">
+        <div class="row">
+          <div class="col-md-12">
+            <!--begin::Portlet-->
+            <div class="m-portlet m-portlet--tab">
+              <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                  <div class="m-portlet__head-title">
+                    <span class="m-portlet__head-icon m--hide">
+                      <i class="la la-gear"></i>
+                    </span>
+                    <h3 class="m-portlet__head-text">
+                      Training Partner Details
+                    </h3>
+                    <p class="errMessage">{{currentFormErrorMessage}} </p>
+                  </div>
+                </div>
+              </div>
+              <!--begin::Form-->
+              <!-- General detail Form -->
+              <form class="m-form m-form--fit m-form--label-align-right" [formGroup]="generalDetailsForm" *ngIf="currentForm==0">
+                <div class="m-portlet__body">
+                  <div class="form-group m-form__group m--margin-top-10 form_header">
+                    Organisation Info:
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Name of the Organisation:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" placeholder="Enter Full name of Organization" name="organization-name" formControlName="nameOfOrganisation"
+                        [(ngModel)]="tpActorData.generalDetailsOfTP.nameOfTheOrganisation">
+                      <app-form-control-messages [control]="generalDetailsForm.controls.nameOfOrganisation" [name]="'Name oF Organisation'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Type of the Organisation:
+                    </label>
+                    <div class="col-8  ">
+                      <select name="" class="form-control m-input" id="exampleSelect1" formControlName="typeOfOrganisation" [(ngModel)]="tpActorData.generalDetailsOfTP.typeOfOrganisation">
+                        <option value="" disabled>Select Type of the Organisation</option>
+                        <option value="private"> Private </option>
+                        <option value="government">Government</option>
+                      </select>
+                      <app-form-control-messages [control]="generalDetailsForm.controls.typeOfOrganisation" [name]="'Type oF Organisation'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Year of Establishment:
+                    </label>
+                    <div class="col-8">
+                      <select name="" class="form-control m-input" id="exampleSelect1" (change)="setYear()" formControlName="yearOfEstablishment"
+                        [(ngModel)]="tpActorData.generalDetailsOfTP.yearOfEstablishment">
+                        <option value="" disabled>Select Established Year</option>
+                        <option *ngFor="let yearOfEstablishment of yearOption">{{yearOfEstablishment}}</option>
+                      </select>
+                      <app-form-control-messages [control]="generalDetailsForm.controls.yearOfEstablishment" [name]="'Year oF Establishment'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Landline Number:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" maxlength="12" name="landline-number" placeholder=" Enter the landline number"
+                        formControlName="landLineNumber" [(ngModel)]="tpActorData.generalDetailsOfTP.landLineNumber">
+                      <app-form-control-messages [control]="generalDetailsForm.controls.landLineNumber" [name]="'Land Line Number'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Website:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" name="website" placeholder=" Enter the website address" formControlName="website"
+                        [(ngModel)]="tpActorData.generalDetailsOfTP.website">
+                      <app-form-control-messages [control]="generalDetailsForm.controls.website" [name]="'Website'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="form-group m-form__group m--margin-top-10 form_header">
+                    CEO/MD/Head of the Organisation Info:
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      CEO/MD/Head’s Name:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" name="CEO-name" placeholder="Enter full name of Organization CEO/MD/Head"
+                        formControlName="nameOfHead" [(ngModel)]="tpActorData.headPointOfContact.fullName">
+                      <app-form-control-messages [control]="generalDetailsForm.controls.nameOfHead" [name]="'Name OF Head'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      CEO/MD/Head’s Email Address:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" name="CEO-email" placeholder="Enter the email address of CEO/MD/Headof Organization"
+                        formControlName="emailOfHead" [(ngModel)]="tpActorData.headPointOfContact.email">
+                      <app-form-control-messages [control]="generalDetailsForm.controls.emailOfHead" [name]="'Email OF Head'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      CEO/MD/Head’s Mobile Number:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" maxlength="10" name="mobile-number" placeholder="Enter mobile number of CEO/MD/Head of organization"
+                        formControlName="mobileOfHead" [(ngModel)]="tpActorData.headPointOfContact.mobileNumber">
+                      <app-form-control-messages [control]="generalDetailsForm.controls.mobileOfHead" [name]="'Mobile OF Head'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      The above person should be consider as:
+                    </label>
+                    <div class="col-8">
+                      <label class="m-checkbox m-checkbox--default">
+                        <input type="checkbox"> Authorized Signatory
+                        <span></span>
+                      </label>
+                    </div>
+                  </div>
+                  <hr>
+
+                  <div class="form-group m-form__group m--margin-top-10 form_header">
+                    Authorized Signatory Info:
+                    <span class="errMessage">{{authErrorMessage}}</span>
+                  </div>
+                  <div [formGroup]="authorizedSignatoryForm">
+                    <div formArrayName="authorizedSignatory">
+                      <div *ngFor=" let emp of authorizedSignatoryForm.get('authorizedSignatory').controls; let idx = index">
+                        <div [formGroupName]="idx">
+                          <div class="form-group m-form__group row">
+                            <label for="tp-details" class="col-4 col-form-label">
+                              Authorized Signatory Name: {{idx}}
+                            </label>
+                            <div class="col-8">
+                              <input class="form-control m-input" type="text" name="auth-signatory-name" placeholder="Enter  full name of Organisation's authorized signatory"
+                                formControlName="fullName">
+                              <app-form-control-messages [control]="authorizedSignatoryForm.get('authorizedSignatory').controls[idx].get('fullName')" [name]="'Name OF Authorized Signatory'"></app-form-control-messages>
+                            </div>
+                          </div>
+                          <div class="form-group m-form__group row">
+                            <label for="tp-details" class="col-4 col-form-label">
+                              Authorized Signatory Email Address: {{idx}}
+                            </label>
+                            <div class="col-8">
+                              <input class="form-control m-input" type="text" name="auth-signatory-email" placeholder="Enter email address of organization's authorized signatory"
+                                formControlName="email">
+                              <app-form-control-messages [control]="authorizedSignatoryForm.get('authorizedSignatory').controls[idx].get('email')" [name]="'Email OF Authorized Signatory'"></app-form-control-messages>
+                            </div>
+                          </div>
+                          <div class="form-group m-form__group row">
+                            <label for="tp-details" class="col-4 col-form-label">
+                              Authorized Signatory Mobile Number: {{idx}}
+                            </label>
+                            <div class="col-8">
+                              <input class="form-control m-input" type="text" name="auth-sigatory-mobile" placeholder="Enter mobile number of organosation's authorized signatory"
+                                maxlength="10" formControlName="mobileNumber">
+                              <app-form-control-messages [control]="authorizedSignatoryForm.get('authorizedSignatory').controls[idx].get('mobileNumber')"
+                                [name]="'Mobile Number OF Authorized Signatory'"></app-form-control-messages>
+                            </div>
+                            <div class="col-12" style="position:absolute;bottom:140px;right:10px">
+                              <button class="btn btn-transparent" [disabled]="!authorizedSignatoryForm.get('authorizedSignatory').controls[idx].valid"
+                                *ngIf="idx==idx" (click)="addRowsForAuthSign(idx)">Add another Signatory Details</button>
+                            </div>
+                          </div>
+
+                        </div>
+                        <hr>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="m-portlet__foot m-portlet__foot--fit" style="margin-top:25px">
+                  <div class="m-form__actions">
+                    <div class="row">
+                      <div class="col-2"></div>
+                      <div class="col-10 text-center">
+                        <button type="button" class="btn btn-next" [disabled]="!generalDetailsForm.valid" (click)="save()">
+                          Save & Next
+                        </button>
+                        <button class="btn btn-outline-info">
+                          Save as Draft
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- end of General Details Form -->
+              <!-- Start of address form -->
+              <form class="m-form m-form--fit m-form--label-align-right" [formGroup]="addressDetailsForm" *ngIf="currentForm==1">
+                <div class="m-portlet__body">
+                  <div class="form-group m-form__group m--margin-top-10 form_header">
+                    Address of the Organisation:
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Address of the Organisation:
+                    </label>
+                    <div class="col-8">
+                      <textarea class="form-control m-textarea" type="text" name="org-address" placeholder="Enter Full address of Organisation"
+                        formControlName="addressLine1" [(ngModel)]="tpActorData.address.address1"></textarea>
+                      <app-form-control-messages [control]="addressDetailsForm.controls.addressLine1" [name]="'Address'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Nearby Landmark:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="search" placeholder="Enter the nearby landmark to the above menationed organsation "
+                        formControlName="landmark" [(ngModel)]="tpActorData.address.landmark">
+                      <app-form-control-messages [control]="addressDetailsForm.controls.landmark" [name]="'Landmark'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Pincode:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="url" name="pincode" placeholder="Enter the pincode" formControlName="pincode" maxlength="6"
+                        [(ngModel)]="tpActorData.address.pinCode">
+                      <app-form-control-messages [control]="addressDetailsForm.controls.pincode" [name]="'Pincode'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      State / Union Territory:
+                    </label>
+                    <div class="col-8  ">
+                      <select name="state" class="form-control m-input" id="exampleSelect1" formControlName="state" [(ngModel)]="selectedState.name"
+                        (change)="getDistrict(selectedState.name)">
+                        <option value="" disabled>Select State/Union Territory</option>
+                        <option [ngValue]="stateData" *ngFor="let stateData of stateOptions.states">{{stateData.name}}</option>
+                      </select>
+
+                      <app-form-control-messages [control]="addressDetailsForm.controls.state" [name]="'State'"></app-form-control-messages>
+
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      District / City:
+                    </label>
+                    <div class="col-8 ">
+                      <select name="dist" class="form-control m-input" id="exampleSelect1" formControlName="district" [(ngModel)]="selectedDistrict.name"
+                        (change)="getTehsil(selectedDistrict.name)">
+                        <option value="" disabled>Select District/ City</option>
+                        <option [ngValue]="dist" *ngFor="let dist of districtOptions.districts">{{dist.name}}</option>
+
+                      </select>
+                      <app-form-control-messages [control]="addressDetailsForm.controls.district" [name]="'District'"></app-form-control-messages>
+
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Tehsil / Mandal:
+                    </label>
+                    <div class="col-8  ">
+                      <select name="" class="form-control m-input" id="exampleSelect1" formControlName="subDistrict" [(ngModel)]="selectedTehsil.name"
+                        (change)="setTehsil(selectedTehsil)">
+                        <option value="" disabled>Select Tehsil/Mandal</option>
+                        <option [ngValue]="tehsil" *ngFor="let tehsil of tehsilOptons.subDistricts ">{{tehsil.name}}</option>
+                      </select>
+                      <app-form-control-messages [control]="addressDetailsForm.controls.subDistrict" [name]="'SubDistrict'"></app-form-control-messages>
+
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Parliamentary Consistuency:
+                    </label>
+                    <div class="col-8  ">
+                      <select name="" class="form-control m-input" id="exampleSelect1" formControlName="parliamentaryConstituency" [(ngModel)]="tpActorData.address.districtDetails.parliamentaryConstituency">
+                        <option value="" disabled>Select the Parliamentary Consistuency</option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                      </select>
+                      <app-form-control-messages [control]="addressDetailsForm.controls.parliamentaryConstituency" [name]="'Parliamentary Constituency'"></app-form-control-messages>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Address Proof:
+                    </label>
+                    <div class="col-4  input-group">
+                      <select name="" class="form-control m-input" id="exampleSelect1" formControlName="addressProof" [(ngModel)]="tpActorData.address.addressProof">
+                        <option value="" disabled>Select address proof</option>
+                        <option [value]="identity" *ngFor="let identity of addressProof">{{identity}}</option>
+                      </select>
+                      <app-form-control-messages [control]="addressDetailsForm.controls.addressProof" [name]="'Address Proof'"></app-form-control-messages>
+
+                    </div>
+                    <div class="col-4  input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Address Proof</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-portlet__foot m-portlet__foot--fit">
+                  <div class="m-form__actions">
+                    <div class="row">
+                      <div class="col-2"></div>
+                      <div class="col-10 text-center">
+                        <button type="button" class="btn btn-next" [disabled]="!addressDetailsForm.valid" (click)="save()">
+                          Save & Next
+                        </button>
+                        <a class="">
+                          Save as Draft
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- End Of address Form -->
+              <!-- Start of Finanical form -->
+              <form class="m-form m-form--fit m-form--label-align-right" [formGroup]="financialDetailsForm" *ngIf="currentForm==2">
+                <div class="m-portlet__body">
+                  <div class="form-group m-form__group m--margin-top-10 form_header">
+                    Financial Account Details Info:
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Permanent Account Number:
+                    </label>
+                    <div class="col-4">
+                      <input class="form-control m-textarea" type="text" name="account-number" maxlength="10" placeholder="Enter Permanent account number"
+                        formControlName="PAN" [(ngModel)]="tpActorData.financial.pan">
+                      <app-form-control-messages [control]="financialDetailsForm.controls.PAN" [name]="'PAN'"></app-form-control-messages>
+                    </div>
+                    <div class="col-4">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">PAN Proof</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      GST Account Number:
+                    </label>
+                    <div class="col-4">
+                      <input class="form-control m-input" type="text" placeholder="Enter GST account number" formControlName="GST" [(ngModel)]="tpActorData.financial.gst">
+                      <app-form-control-messages [control]="financialDetailsForm.controls.GST" [name]="'GST'"></app-form-control-messages>
+
+                    </div>
+                    <div class="col-4">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">GST Proof</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Aadhaar Number:
+                    </label>
+                    <div class="col-8">
+                      <input class="form-control m-input" type="text" maxlength="12" name="aadhar-no" placeholder="Enter Aadhar number" formControlName="aadhar"
+                        [(ngModel)]="tpActorData.financial.aadhar">
+                      <app-form-control-messages [control]="financialDetailsForm.controls.aadhar" [name]="'Aadhar'"></app-form-control-messages>
+
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="form-group m-form__group m--margin-top-10 form_header">
+                    Financial Year wise Turnover Details and Chartered Accountant Certificates :
+                  </div>
+
+                  <div class="form-group m-form__group row" *ngIf="yearArr[0]!=undefined">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Financial Year {{yearArr[0]}}:
+                    </label>
+                    <div class="col-4">
+                      <input class="form-control m-input" type="text" placeholder="Enter annual turnover" formControlName="annuvalTurnover1" [(ngModel)]="tpActorData.financial.turnoverDetails[0].annualTurnover">
+                    </div>
+                    <div class="col-4">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">CA Certificate</label>
+                      </div>
+                    </div>
+                    <app-form-control-messages [control]="financialDetailsForm.controls.annuvalTurnover1" [name]="'Annual Trunover'"></app-form-control-messages>
+                  </div>
+                  <div class="form-group m-form__group row" *ngIf="yearArr[1]!=undefined">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Financial Year {{yearArr[1]}}:
+                    </label>
+                    <div class="col-4">
+                      <input class="form-control m-input" type="text" placeholder="Enter annual turnover" formControlName="annuvalTurnover2" [(ngModel)]="tpActorData.financial.turnoverDetails[1].annualTurnover">
+                    </div>
+                    <div class="col-4">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">CA Certificate</label>
+                      </div>
+                    </div>
+                    <app-form-control-messages [control]="financialDetailsForm.controls.annuvalTurnover2" [name]="'Annual Trunover'"></app-form-control-messages>
+                  </div>
+                  <div class="form-group m-form__group row" *ngIf="yearArr[2]!=undefined">
+                    <label for="tp-details" class="col-4 col-form-label">
+                      Financial Year {{yearArr[2]}}:
+                    </label>
+                    <div class="col-4">
+                      <input class="form-control m-input" type="text" placeholder="Enter annual Turnover" formControlName="annuvalTurnover3" [(ngModel)]="tpActorData.financial.turnoverDetails[2].annualTurnover">
+                    </div>
+                    <div class="col-4">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">CA Certificate</label>
+                      </div>
+                    </div>
+                    <app-form-control-messages [control]="financialDetailsForm.controls.annuvalTurnover3" [name]="'Annual Trunover'"></app-form-control-messages>
+                  </div>
+
+                  <div class="form-group m-form__group row">
+                    <label for="example-datetime-local-input" class="col-12 col-form-label form-notes">
+                      Note : You should provide the CA Certificate for Annual Turnover which needs to be on a letter head,stamped and signed with
+                      date by CA mentioning his/her CA Membership Number and Firm Registration Number. No other documents
+                      will be acepted.
+                    </label>
+                  </div>
+                  <div class="m-portlet__foot m-portlet__foot--fit">
+                    <div class="m-form__actions">
+                      <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-10 text-center">
+                          <button type="button" class="btn btn-next" [disabled]="!financialDetailsForm.valid" (click)="save()">
+                            Save & Next
+                          </button>
+                          <a class="">
+                            Save as Draft
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!--End of Financial form -->
+              <!-- Start of Declaration -->
+              <div class="form-container" *ngIf="currentForm==3">
+                <div class="declaration">
+                  <div class="declaration-header">
+                    <span>
+                      Declaration
+                    </span>
+                    <span>
+                      <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24">
+                          <defs>
+                            <path id="a" d="M12 23C5.925 23 1 18.075 1 12S5.925 1 12 1s11 4.925 11 11-4.925 11-11 11zm0-2a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM11 8a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0V8zm.293 7.707a1 1 0 1 1 1.414-1.414 1 1 0 0 1-1.414 1.414z"
+                            />
+                          </defs>
+                          <use fill="#000" fill-rule="nonzero" xlink:href="#a" />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="declaration-content">
+                    <p class="declaration-para">I hereby declare that the information provided is true and correct. I also understand that any willful
+                      dishonesty may render for refusal of this application or immediate termination of employment.
+                      <br> If this application is successful, I authorize NSDC to keep this information in my personal file,
+                      otherwise, all information will be destroyed within 3 months after the date of application.
+                      <br> I authorize NSDC to disclose in a confidential manner of any information supplied in this application
+                      to the parties namely the Human Resources staff, concerning department head or above for and assessment.
+                      <br> I also understand I am entitled to update and correct the above information and agree that this information
+                      could be held for 3 months from the date of application and used for future training purpose by Nationall
+                      Skill Development Council.
+                      <br>
+                    </p>
+                  </div>
+
+
+                  <div class="m-portlet__body">
+                    <span class="errMessage">{{captchErrorMessage}}</span>
+                    <div class="form-group m-form__group row">
+
+                      <div class="col-lg-4 col-md-9 col-sm-12">
+                        <re-captcha required class="g-recaptcha" siteKey="6LdnLwgUAAAAAAIb9L3PQlHQgvSCi16sYgbMIMFR"></re-captcha>
+                      </div>
+                      <script src='https://www.google.com/recaptcha/api.js'></script>
+
+                    </div>
+                  </div>
+
+
+                  <div class="declaration-button">
+                    <button class="btn btn-next active" (click)="submitTPRegistrationData()">Save & Continue to Payment</button>
+                    <button type="button" class="btn btn-outline-info">Save As Draft</button>
+
+                  </div>
+                </div>
+              </div>
+              <!-- End of Declaration -->
+              <!-- Start of Thank U -->
+              <div class="form-container pt" *ngIf="currentForm==4">
+                <div class="thanks">
+                  <div class="thanks-heading">
+                    Thank You
+                  </div>
+                  <div class="thanks-content">
+                    <p class="thanks-para">You will receive a confirmation message in your inbox shortly. If you do not receive this message, please
+                      check your spam folder.</p>
+                    <br>
+
+                    <p class="thanks-para">Don't forget to add info@sdmsindia.com to your address book so that you are always the first to hear
+                      about the latest collections, events and news.</p>
+                  </div>
+                  <div class="thanks-button">
+                    <span class="m-stack__item--middle header-right-button">
+                      <button class="btn btn-next" style="margin:0">Logout</button>
+                    </span>
+
+
+                    <span class="link-text">
+                      <img src="images/logos/printer.png" alt="">
+                    </span>
+                    <button type="button" class="btn btn-outline-info">Download Submitted Form</button>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Thank U -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end::Body -->
+  </div>
+  <!-- end:: Page -->

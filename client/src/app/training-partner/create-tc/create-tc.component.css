@@ -1,0 +1,193 @@
+
+  /**side Line**/
+  .m--padding-top-25 {
+    padding-top: 0px !important; 
+}
+ .leftSide-Padd{
+   padding-left:0!important;
+ }
+ .mCustomScrollBox{
+   overflow:visible !important;
+   height:100%
+ }
+ .m-aside-left {
+   background-color: #ffffff; 
+   width: auto; 
+}
+.top-header-only {
+  max-height: auto !important;
+}
+.m-header--fixed .m-body {
+  padding-top: 114px !important;
+}
+.m-aside-left {
+  padding-top: 23px !important;
+}
+
+.btn-next {
+  width: 110px;
+  height: 36px;
+  background-color: #2980b9;
+  margin-top: 13px;
+  color: #ffffff;
+}
+.btn-transparent {
+  height: 37px;
+  border-radius: 2px;
+  border: solid 1px #2980b9;
+  color:  #2980b9;
+  float: right;
+  background: transparent;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-container {
+  padding: 10px 40px 10px 40px;
+}
+.form_header {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #575962;
+}
+.m-form.m-form--label-align-right .m-form__group > label {
+  text-align: left;
+}
+.form-notes {
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #0081be !important;
+}
+.aside-header{
+  padding-left: 30px;
+}
+@media (max-width: 992px){
+.m-aside-left {
+    width: 335px !important;
+    left: -335px;
+}
+.m-aside-left--on .m-aside-left-close {
+  left: 300px;
+}
+}
+.errMessage{
+  color:red;
+  font-size:15px;
+  font-weight: bold;
+}
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Upload";
+}
+/* start of declaration  */
+.declaration-header {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  text-align: left;
+  color: #323c47;
+}
+.declaration-content {
+  border: 1px solid #e8ecf2;
+  padding: 20px;
+  margin-top: 20px;
+}
+.declaration-para {
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: 2.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #323c47;
+}
+.captcha-code{
+  margin-top: 40px;
+}
+.code {
+  border-radius: 4px;
+  background-color: #f4f8f9;
+  padding: 21px 116px 25px 103px;
+}
+.captcha-input-label {
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5f5f5f;
+  padding-top: 41px;
+}
+.captcha-input-control {
+  padding-top: 10px;
+}
+.captcha-input {
+  width: 250px;
+  height: 36.1px;
+  border: 1px solid #e8ecf2;
+}
+.declaration-button{
+  padding: 10px 0px 10px 0px
+}
+.declaration-next{
+  width: 250px;
+  height: 36px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #2980b9;  
+  border: none;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-top: 26px; 
+}
+/* End of declaration */
+/* Start of thank U */
+.thanks {
+  text-align: center;
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+.thanks-heading {
+  font-size: 48px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2880B9;
+}
+.thanks-content {
+  padding: 71px 30px 71px 30px;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: justify;
+
+}
+.download-link {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2980b9;
+  padding-top: 20px;
+}
+.link-text {
+  cursor: pointer;
+}

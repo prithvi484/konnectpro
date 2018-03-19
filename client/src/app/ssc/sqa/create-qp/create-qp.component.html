@@ -1,0 +1,768 @@
+<div class="m-content">
+
+	<!--Step 1 Basic Details-->
+	<div class="m-portlet m-portlet--tab" *ngIf="basicDetails">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<span class="m-portlet__head-icon m--hide">
+						<i class="la la-gear"></i>
+					</span>
+					<h3 class="m-portlet__head-text">
+						Create a Qualification Pack
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<span class="m-portlet__head-icon m--hide">
+					<i class="la la-gear"></i>
+				</span>
+				<div class="form-group m-form__group row">
+					<div for="example-text-input" class="col-md-5 col-form-label inline-header">
+						Upload the QP Excel Document according to the tamplate
+					</div>
+					<div class="col-md-7">
+						<input #fileInput type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)">
+						<label class="custom-file-label" for="customFile">
+							{{file.name}}
+						</label>
+						<button type="button" class="btn btn-info btn-basic" (click)="addFile()">Add file and Load</button>
+						<button type="button" class="btn btn-outline-info" (click)="downloadTemplate()">Download Template</button>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<div class="offset-md-5 col-md-2">
+						<i></i> No File Uploaded Yet </div>
+					<!-- <div class="col-md-2">
+          <span>Edit</span>
+          <span>Remove</span>
+        </div> -->
+				</div>
+			</div>
+		</div>
+		<!--begin::Form-->
+		<form [formGroup]="basicDetailsForm" class="m-form m-form--fit m-form--label-align-right">
+			<div class="m-portlet__body">
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Choose Country of Origin
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option">
+							<option disabled [value]="undefined">
+								Select Country of Origin
+							</option>
+							<option [ngValue]="QPData.country.countryID">
+								{{QPData.country.countryDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Sector/s of the Qualification Pack
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" type="text" formControlName="sectorName" name="sectorName" placeholder="Select Requesting Name">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Choose Sub-Sector of the Qualification Pack
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="subSectorName">
+							<option disabled value="">
+								Select Sub-Sector
+							</option>
+							<option *ngFor="let sector of subSectors" [ngValue]="sector">
+								{{sector.qp}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Enter Reference ID (QP Code)
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" formControlName="qpCode" name="QPCode" type="text" placeholder="Enter the Qualification Code">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Occupation
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="occupation">
+							<option disabled value="">
+								Select the Occupation from here
+							</option>
+							<option *ngFor="let item of occupation" [ngValue]="item.occupationID">
+								{{item.occupationDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Aligned To
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" type="text" name="alignTo" formControlName="alignedTo" placeholder="Enter as NCO-2015/XXXX.XX or NCO-2015/NIL">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						NSQF Level
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" type="text" name="nsqfLevel" formControlName="nsqfLevel" placeholder="Enter NSQF Level(Credits)">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Job Role
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" type="text" name="jobRole" formControlName="jobRole" placeholder="Enter Job Role Name Title">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Brief Job Role Description
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" type="text" name="jobDesc" formControlName="jobRoleDesc" placeholder="Enter around 3-4 lines of the Brief Job Role Description">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Personal Attributes
+					</label>
+					<div class="col-md-7">
+						<input class="form-control m-input" type="text" name="PersonalAttr" formControlName="personalAttrs" placeholder="Enter Description of Personal Attributes required for the job role">
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Minimum Education Qualification
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="minEduQual">
+							<option disabled value="">
+								Select Minimum Education Qualification here
+							</option>
+							<option *ngFor="let edu of qualification" [ngValue]="edu.ID">
+								{{edu.eduQualDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Maximum Education Qualification
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="maxEduQual">
+							<option disabled value="">
+								Select Maximum Education Qualification here
+							</option>
+							<option *ngFor="let edu of qualification" [ngValue]="edu.ID">
+								{{edu.eduQualDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Pre-Requisite Licence/Training
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="preReqLicenseTrng">
+							<option disabled value="">
+								Select Pre-Requisite Licence/Training
+							</option>
+							<option *ngFor="let pre of preRequisite" [ngValue]="pre.trainingID">
+								{{pre.trainingDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Minimum Job Entry Age
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="minJobEntryAge">
+							<option disabled value="">
+								Select Minimum Job Entry Age
+							</option>
+							<option *ngFor="let age of jobAge" [ngValue]="age.ageID">
+								{{age.ageDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Experience Required
+					</label>
+					<div class="col-md-7">
+						<select class="form-control m-input" name="option" formControlName="expReq">
+							<option disabled value="">
+								Select Experience Required
+							</option>
+							<option *ngFor="let exp of experience" [ngValue]="exp.expReqID">
+								{{exp.expReqDesc}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label for="example-text-input" class="offset-md-1 col-md-4 col-form-label">
+						Performance Criteria
+					</label>
+					<div class="col-md-7">
+						<textarea class="form-control m-input qp-textarea" name="memo" formControlName="prefCriteria" placeholder="Enter performance criteria as described in the relevent Occupational Standard unit. Include additional performance criteria, if applicable."></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="m-portlet__foot m-portlet__foot--fit">
+				<div class="m-form__actions">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="offset-md-3 col-md-7">
+							<button type="submit" class="btn btn-success btn-basic" (click)="saveQP('compulsoryNOS')">
+								Save and Continue
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!--Step 2 Add Compulsory NOS-->
+	<div class="m-portlet" *ngIf="compulsoryNOS">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text col-md-4">
+						Create Qualification Pack - Add Compulsory NOSs
+					</h3>
+					<div class="form-group col-md-6 ">
+						<button type="button" class="btn btn-outline-info btn-new-nos" routerLink="/ssc/sqa/create-nos">
+							Create a New NOS
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<div class="m-section">
+				<div class="m-section__content">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="m-portlet__head-text inline-header">
+								Enter Keywords to Search NOS
+							</div>
+							<div class="form-group ">
+								<input class="form-control m-input" [(ngModel)]="searchText"  placeholder="Search">
+							</div>
+							<!-- <div class="col-md-6">
+								<div class="m-input-icon m-input-icon--left">
+									<input type="text" class="form-control m-input m-input--solid" placeholder="Search..." id="generalSearch">
+								</div>
+							</div> -->
+						</div>
+						<div class="col-md-6 right-btn">
+							<div class="form-group btn-content">
+								<button type="button" class="btn btn-success btn-basic" (click)="saveQP('electiveNOS')">
+									Save and Continue
+								</button>
+								<div class="inline-header" *ngIf="linkNOS">1 NOSs added Successfully !!</div>
+							</div>
+						</div>
+					</div>
+					<table class="table table-striped m-table ">
+						<thead>
+							<tr>
+								<th>
+									NOS Name
+								</th>
+								<th>
+									NOS Code
+								</th>
+								<th>
+									Sector
+								</th>
+								<th>
+									Sub Sector
+								</th>
+								<th>
+									Occupation
+								</th>
+								<th>
+									Credits
+								</th>
+								<th>
+									NSQF Level
+								</th>
+								<th>
+									<b>Status</b>
+								</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let item of records | search : searchText">
+								<td>
+									<a href="#" class="type-name">{{item.unitTitle}}</a>
+								</td>
+								<td>
+									{{item.unitCode}}
+								</td>
+								<td>
+									{{item.sectorName}}
+								</td>
+								<td>
+									{{item.subSectorName}}
+								</td>
+								<td>
+									{{basicDetailsForm.value.occupation}}
+								</td>
+								<td>
+									<span class="fa fa-check"></span>
+								</td>
+								<td>
+									{{basicDetailsForm.value.nsqfLevel}}
+								</td>
+								<td>National Occupational Standard</td>
+								<td>
+									<button class="status-btn" (click)="linkQP(item)" *ngIf="!item.linked">+ Link</button>
+									<button class="done-btn" *ngIf="item.linked">Done</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div>
+						<app-pagination [count]=length (pageNumber)="assignNOSData($event)"></app-pagination>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Step 3 Add Elective NOS-->
+	<div class="m-portlet" *ngIf="electiveNOS">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text col-md-4">
+						Create Qualification Pack - Add Elective NOSs
+					</h3>
+					<div class="form-group col-md-6 btn-skip">
+						<button type="button" class="btn btn-outline-info" (click)="skipStep('optionNOS')">
+							Skip Step
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<div class="m-section">
+				<div class="m-section__content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="m-portlet__head-text inline-header">
+								Enter the Brief about the Elective associated with the primary job role
+							</div>
+						</div>
+						<div class="form-group col-md-7">
+							<textarea type="text" class="form-control m-input qp-textarea" [(ngModel)]="basicDetailsForm.value.nosData.Description" placeholder="Enter 3-4 lines about the Elective NOS associated with the primary job role created"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="m-portlet__head-text">
+								Enter Keywords to Search NOS
+							</div>
+							<input type="text" class="form-control m-input" disabled="disabled" placeholder="Search">
+						</div>
+					</div>
+					<table class="table table-striped m-table">
+						<thead>
+							<tr>
+								<th>
+									NOS Name
+								</th>
+								<th>
+									NOS Code
+								</th>
+								<th>
+									Sector
+								</th>
+								<th>
+									Sub Sector
+								</th>
+								<th>
+									Occupation
+								</th>
+								<th>
+									Credits
+								</th>
+								<th>
+									NSQF Level
+								</th>
+								<th>
+									<b>Status</b>
+								</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let item of records | search : searchText">
+								<td>
+									<a href="#" class="type-name">{{item.unitTitle}}</a>
+								</td>
+								<td>
+									{{item.unitCode}}
+								</td>
+								<td>
+									{{item.sectorName}}
+								</td>
+								<td>
+									{{item.subSectorName}}
+								</td>
+								<td>Occupation
+								</td>
+								<td>
+									<span class="fa fa-check"></span>
+								</td>
+								<td>
+									@lisa
+								</td>
+								<td>National Occupational Standard</td>
+								<td>
+									<button class="status-btn" (click)="linkQP(item)" *ngIf="!item.linked">+ Link</button>
+									<button class="done-btn" *ngIf="item.linked">Done</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption ">
+				<div class="m-portlet__head-title pull-right">
+					<div class="row">
+						<span class="col-md-12">
+							<button type="button" class="btn btn-info btn-basic" style="margin-right:20px;" (click)="saveQP('optionNOS')">Save and Continue</button>
+							<button type="button" class="btn btn-outline-info" (click)="saveQP('electiveNOS')">+ Add Another Elective</button>
+							<button type="button" class="btn btn-link type-name" (click)="skipStep('optionNOS')">Skip Step</button>
+						</span>
+					</div>
+					<div class="row">
+						<div class="col-md-8 pull-right inline-header">
+							1 NOSs added Successfully !!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Step 4 Add Option NOS-->
+	<div class="m-portlet" *ngIf="optionNOS">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text col-md-4">
+						Create Qualification Pack - Add Option NOSs
+					</h3>
+					<div class="form-group col-md-6 btn-skip">
+						<button type="button" class="btn btn-outline-info type-name" (click)="skipStep('reviewAndSubmit')">
+							Skip Step
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<div class="m-section">
+				<div class="m-section__content">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="m-portlet__head-text inline-header">
+								Enter the Brief about the Option associated with the primary job role
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<textarea type="text" class="form-control m-input qp-textarea" placeholder="Enter 3-4 lines about the Option NOS associated with the primary job role created"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="m-portlet__head-tex" style="font-weight:500">
+								Enter Keywords to Search NOS
+							</div>
+							<input type="text" class="form-control m-input" disabled="disabled" placeholder="Search">
+						</div>
+					</div>
+					<table class="table table-striped m-table">
+						<thead>
+							<tr>
+								<th>
+									NOS Name
+								</th>
+								<th>
+									NOS Code
+								</th>
+								<th>
+									Sector
+								</th>
+								<th>
+									Sub Sector
+								</th>
+								<th>
+									Occupation
+								</th>
+								<th>
+									Credits
+								</th>
+								<th>
+									NSQF Level
+								</th>
+								<th>
+									<b>Status</b>
+								</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let item of records  | search : searchText">
+								<td>
+									<a href="#" class="type-name">{{item.unitTitle}}</a>
+								</td>
+								<td>
+									{{item.unitCode}}
+								</td>
+								<td>
+									{{item.sectorName}}
+								</td>
+								<td>
+									{{item.subSectorName}}
+								</td>
+								<td>Occupation
+								</td>
+								<td>
+									<span class="fa fa-check"></span>
+								</td>
+								<td>
+									@lisa
+								</td>
+								<td>National Occupational Standard</td>
+								<td>
+									<button class="status-btn" (click)="linkQP(item)" *ngIf="!item.linked">+ Link</button>
+									<button class="done-btn" *ngIf="item.linked">Done</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption ">
+				<div class="m-portlet__head-title pull-right">
+					<div class="row">
+						<span class="col-md-12">
+							<button type="button" class="btn btn-info btn-basic" style="margin-right:20px;" (click)="saveQP('reviewAndSubmit')">Save and Continue</button>
+							<button type="button" class="btn btn-outline-info" (click)="saveQP('optionNOS')">+ Add Another Option</button>
+							<button type="button" class="btn btn-link" (click)="skipStep('reviewAndSubmit')">Skip Step</button>
+						</span>
+					</div>
+					<div class="row" *ngIf="linkNOS">
+						<div class="col-md-8 pull-right inline-header">
+							1 NOSs added Successfully !!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Step 5 Attach Documents-->
+	<div class="m-portlet" *ngIf="reviewAndSubmit">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text col-md-4">
+						Create Qualification Pack - Review & Submit
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<div class="m-section">
+				<div class="m-section__content">
+					<div class="row">
+						<div class="col-md-1">
+
+						</div>
+						<div class="col-md-4">
+							<div class="pack-detail ">
+								<div class="row">
+									<div class="col-md-6 type-name">
+										Qualification Pack ID:
+									</div>
+									<div class="col-md-6">
+										{{basicDetailsForm.value.qpCode}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 type-name">
+										Job Role:
+									</div>
+									<div class="col-md-6">
+										{{basicDetailsForm.value.jobRole}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 type-name">
+										Documents (Docket):
+									</div>
+									<div class="col-md-6">
+										<!-- {{QpData.Docket.Documents}}-->
+										asdfghjkl
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 type-name">
+										Next Review Date:
+									</div>
+									<div class="col-md-6">
+										10 March
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 type-name">
+										Version Number:
+									</div>
+									<div class="col-md-6">
+										1.0
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<p>Your Qualification Pack is almost completed, now you need to attachthe mandatory documents which will be sent along
+								to the qualification pack creation request to the Standards team.</p>
+							<p>If you wish to choose multiple QPs and attached documents to them and send to the Standards team for approval alltogether
+								select "
+								<span class="type-name">Multiple APs as Group</span>".</p>
+							<p>If you don't wish to submit the Qualification Pack for approval, select "Save Qualification Pack" and the same will
+								be reflected in the "
+								<span class="type-name">All QPs</span>" listing.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title" style="width:100%;">
+					<div class="row">
+						<div class="col-md-6"></div>
+						<div class="col-md-6 btn-save">
+							<span>
+								<button type="button" class="btn btn-info status-btn" data-toggle="modal" data-target="#attachDocModal">Attach Documents and Send for Approval</button>
+								<button type="button" class="btn btn-outline-info" (click)="submitQP()">Save Qualification Pack</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Step 6 Success-->
+	<div class="m-portlet" *ngIf="successQP">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text col-md-4">
+						Create Qualification Pack - Review & Submit
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<div class="m-section">
+				<div class="m-section__content">
+					<div class="row">
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-2">
+							<img src="../../../assets/images/create-success.svg">
+						</div>
+						<div class="col-md-9">
+							<p>Your Qualification Pack is successfully saved and is added to the"
+								<span class="type-name">VIEW ALL QPS</span>"" listing page uder your dashboard.</p>
+							<p>If you wish to continue to the Subbmission of the Qualification Pack to the Standards team for approval you must map
+								the mandatory documents to the Qualifications Pack. While you select the multiple group of Qualification Packs to
+								be attached with the documents set or single QP too.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<span class="col-md-3">
+						</span>
+						<span class="col-md-8">
+							<button type="button" class="btn btn-link type-name" (click)="viewQP()">Viwe All QPs</button>
+							<button type="button" class="btn btn-info btn-basic" routerLink="/ssc/sqa">Back to Dashboard</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="attachDocModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">
+						Choose whether you want to attach documents (Docket) to
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" (click)="close()">
+							&times;
+						</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="qp-card row">
+						<div class="card col-md-6">
+							<img src="../../../assets/images/process.svg">
+							<p class="card-subtitle">Multiple QPs as group</p>
+						</div>
+						<div class="card col-md-6">
+							<img src="../../../assets/images/process.svg">
+							<p class="card-subtitle">Attach to current QP only</p>
+						</div>
+					</div>
+					<div class="row">
+						While selecting Multiple QP's to be attached with the Document and send for approval please make sure that those et of documents
+						are common for the selected Qualification Pack's.
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

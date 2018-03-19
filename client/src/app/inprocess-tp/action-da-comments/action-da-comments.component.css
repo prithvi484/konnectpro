@@ -1,0 +1,41 @@
+.m-content {
+    margin: 0px 30px !important;
+}
+.form_header {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #575962;
+  } 
+  label.col-4.col-form-label {
+    text-align: right;
+}
+.btn-next {
+    width: auto;
+    padding: 12px 40px;
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+.btn-with-border {
+    width: auto;
+    padding: 12px 40px;
+    border: 1px solid #2980b9;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #2980b9
+}
+.form-control.m-input {
+    height: 45px;
+}
+
+.form_head_title.right {
+    float: right
+}
+.m-portlet .m-portlet__head .m-portlet__head-caption .m-portlet__head-title {
+    display: inline !important;
+
+}

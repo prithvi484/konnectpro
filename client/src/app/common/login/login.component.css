@@ -1,0 +1,26 @@
+.m-page {
+    min-height: 100vh !important;
+}
+.m--align-right {
+    padding-top: 32px !important;
+}
+.btn-login {
+    background-color: #2980b9;
+    border: none;
+    outline: none;
+}
+.btn-login:focused {
+ background-color: #2980b9;
+}
+.btn-back {
+    background: transparent;
+    padding: 15px; 
+    border: 1px solid #ffffff !important;  
+}
+.login-right {
+    color: #ffffff;
+    padding-top: 70px;
+}
+.help-text {
+    color: #ffffff;
+}

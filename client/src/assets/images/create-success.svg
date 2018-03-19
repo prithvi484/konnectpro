@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="164" viewBox="0 0 192 164">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M35 163h-9l-4-5v-37l-5-6h22v43zM48.5 163l6-8 6 8zM141.5 163l-6-8-6 8zM179.25 163l-12.75-25.937V125l3.5-4h-15.5l3.5 4v12.063L145.25 163zM102 69.807V60.62l4.267-4.62H83.733L88 60.62v9.187L69 80.77v29.9l26 14.83 26-14.83v-29.9zM85.5 146l10 7 9-4v-5l-4-4v4l-4 2v-12l-7-4 2 8z"/>
+        <path fill="#CCEFFF" d="M88.124 147.835L95.5 153l9-4v-5l-4-4v4l-4 2v-12l-3.38-1.932 1.296 6.432zM135.5 163h6l-6-8zM54.5 163h6l-6-8zM157.015 151L151 163h28.25l-5.898-12zM27 139v24h8l4-5v-19z"/>
+        <path fill="#E8F2F7" d="M121 110.67V96l-5.2-4-5.2 3.98-5.2-3.98-5.2 3.98L95 92l-5.2 3.98L84.6 92l-5.2 3.98L74.2 92l-.2.153v15.225l26.28 15.11z"/>
+        <path fill="#CCEFFF" d="M127.25 19.666l-7.671-7.866-3.529 11.136z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M127.25 19.666l-7.671-7.866-3.529 11.136z"/>
+        <path fill="#CCEFFF" d="M128.191 59.55l2.153-6.415-7.094 1.199z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M128.191 59.55l2.153-6.415-7.094 1.199z"/>
+        <path fill="#CCEFFF" d="M88.627 40.821l.047-6.767-6.368 3.348z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M88.627 40.821l.047-6.767-6.368 3.348zM50.78 25.782l2.715 4.2 4.79-1.43L61 32.75l4.79-1.43 2.716 4.198M132.261 31.796l-2.715 4.199-4.79-1.43-2.715 4.199-4.79-1.43-2.716 4.198M101.623.527l1.02 4.895-4.413 2.35 1.02 4.895-4.413 2.35 1.02 4.895"/>
+        <path fill="#CCEFFF" d="M69.129 13.788l-3.535-.707-.708-3.536 2.122-2.12 3.535.706.707 3.535z"/>
+        <path stroke="#2980B9" stroke-linejoin="round" stroke-width="2" d="M69.129 13.788l-3.535-.707-.708-3.536 2.122-2.12 3.535.706.707 3.535z"/>
+        <path fill="#CCEFFF" d="M59.129 50.621l-3.535-.707-.708-3.535 2.122-2.122 3.535.707.707 3.536z"/>
+        <path stroke="#2980B9" stroke-linejoin="round" stroke-width="2" d="M59.129 50.621l-3.535-.707-.708-3.535 2.122-2.122 3.535.707.707 3.536zM35 163h-9l-4-5v-37l-5-6h22v43z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M26 127h3M26 133h3M26 145h3M26 151h3M85.5 146l10 7 9-4v-5l-4-4v4l-4 2v-12l-7-4 2 8z"/>
+        <path fill="#FFF" d="M108 163H83l5-6h15z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M108 163H83l5-6h15z"/>
+        <path stroke="#2980B9" stroke-linejoin="round" stroke-width="2" d="M102 69.807V60.62l4.267-4.62H83.733L88 60.62v9.187L69 80.77v29.9l26 14.83 26-14.83v-29.9z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M69 95.98L74.2 92l5.2 3.98L84.6 92l5.2 3.98L95 92l5.2 3.98 5.2-3.98 5.2 3.98 5.2-3.98 5.2 4M48.5 163l6-8 6 8zM135.5 155L124 105H66l-11.5 50M141.5 163l-6-8-6 8zM153.005 159l2.003-3.996"/>
+        <path stroke="#2980B9" stroke-linejoin="round" stroke-width="2" d="M179.25 163l-12.75-25.937V125l3.5-4h-15.5l3.5 4v12.063L145.25 163z"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.25 163h174M188.25 163h3M.25 163h3M173.351 151h-22.203M95.332 73.916l-3 3 3 3 3-3zM79.5 83l-3 3 3 3 3-3z"/>
+        <path fill="#2980B9" d="M96.95 113.37a.2.2 0 0 1 .14.06l1.883 1.88a.2.2 0 0 1 0 .283l-1.882 1.881a.195.195 0 0 1-.141.06.197.197 0 0 1-.142-.06l-1.881-1.88a.199.199 0 0 1 0-.284l1.88-1.88a.202.202 0 0 1 .143-.06zM105.167 97.418a.202.202 0 0 0-.142.06l-1.881 1.88a.199.199 0 0 0 0 .283l1.881 1.881c.039.04.091.06.142.06a.195.195 0 0 0 .141-.06l1.882-1.88a.2.2 0 0 0 0-.283l-1.882-1.881a.2.2 0 0 0-.141-.06M85.384 107.704a.202.202 0 0 0-.142.059l-1.881 1.88a.2.2 0 0 0 0 .284l1.88 1.88c.04.04.092.06.143.06a.197.197 0 0 0 .142-.06l1.88-1.88a.2.2 0 0 0 0-.283l-1.88-1.881a.202.202 0 0 0-.142-.06"/>
+        <path stroke="#2980B9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M95.5 157v2M91 157v2M100 157v2M22 139h17"/>
+    </g>
+</svg>

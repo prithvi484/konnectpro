@@ -1,0 +1,69 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="col-sm-6 form-group m-form__group">
+			<div class="input-group">
+				<input type="text" class="form-control m-input" [(ngModel)]="searchKeyWord" placeholder="search by keyword" />
+				<div class="input-group-append">
+					<span class="input-group-text" class="btn btn-primary">
+						Search
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<table class="table table-bordered">
+			<thead>
+				<th class="text-center">Name</th>
+				<th class="text-center">Associated TC</th>
+				<th class="text-center">District,State</th>
+				<th class="text-center">Availablity</th>
+				<th class="text-center">Actions</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let masterTrainer of masterTrainers | search:searchKeyWord">
+					<td class="text-center">{{masterTrainer.name}}</td>
+					<td class="text-center">{{masterTrainer.associatedTC}}</td>
+					<td class="text-center">{{masterTrainer.address.district}},{{masterTrainer.address.state}}</td>
+					<td class="text-center">{{masterTrainer.availability?'Available':'Unavailable'}}</td>
+					<td class="text-center">
+						<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="click"
+						 aria-expanded="true">
+							<a href="#" class="m-portlet__nav-link m-dropdown__toggle btn btn-secondary m-btn m-btn--icon m-btn--pill">
+								<i class="la la-ellipsis-h"></i>
+							</a>
+							<div class="m-dropdown__wrapper">
+								<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+								<div class="m-dropdown__inner">
+									<div class="m-dropdown__body">
+										<div class="m-dropdown__content">
+											<ul class="m-nav">
+												<li class="m-nav__item">
+													<a href="" routerLink="../master-trainer/assign/{{masterTrainer.id}}" class="m-nav__link">
+														<span class="m-nav__link-text">
+															Select
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__item">
+													<a href="" class="m-nav__link">
+														<span class="m-nav__link-text">
+															View Details
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div *ngIf="length>recordsPerPage">
+			<app-pagination [count]=length (pageNumber)="setPageNumber($event)" (recordsPerPage)="setRecordsPerPage($event)"></app-pagination>
+		</div>
+	</div>
+</div>
