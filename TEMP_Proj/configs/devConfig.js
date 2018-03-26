@@ -6,7 +6,7 @@ module.exports = {
 	COMPANY_EMAIL: "fromEmailAddress@something.com",
 	COMPANY_EMAIL_PASSWORD: "PASSWORD"
  },	
- MONGO_URI: process.env.MONGO_URI || 'mongodb://localhost:27017/joyi',
+ MONGO_URI: process.env.MONGO_URI || 'mongodb://localhost:27017/connectpro',
  otpCodeExpiryTimeInMiliSecs : 600000,
  TOKEN_SECRET : process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
  SUPER_ADMIN_EMAIL : 'groeitech@gmail.com', // super Admin credentials
