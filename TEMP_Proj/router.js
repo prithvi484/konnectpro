@@ -8,7 +8,6 @@ module.exports = function(app) {
 	// Prod routes
 	require('./routes/prodRoutes.js')(app);
 
-
 	app.get('/',function(req,res){
 		res.json("success");
 	})
