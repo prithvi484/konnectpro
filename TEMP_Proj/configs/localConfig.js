@@ -10,6 +10,6 @@ module.exports = {
  otpCodeExpiryTimeInMiliSecs : 600000,
  TOKEN_SECRET : process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
  SUPER_ADMIN_EMAIL : 'ConnectPro@gmail.com', // super Admin credentials
- SUPER_ADMIN_PHONE : '9945052847',//super Admin PH no
+ SUPER_ADMIN_PHONE : '1234567',//super Admin PH no
  WEB_FOLDER : "local"    
 };
