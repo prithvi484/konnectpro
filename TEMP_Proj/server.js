@@ -37,33 +37,15 @@ app.use(bodyParser.json({limit: '50mb'}));
 
 // Set Port
 app.set('port', process.env.PORT || 4200);
-
-// Set Static Paths (Websites)
-/* In Case Of SubDomain Existance: */
-//app.use(subdomain('<subDomainName>', express.static('./public/'+app.config.WEB_FOLDER+'/<subDomainProject>'), {'index': ['index.html', 'index.htm']}));
-//app.use(express.static(path.join(__dirname,'./public/'+app.config.WEB_FOLDER+'/joyiWeb')));
-
 app.use(express.static(path.join(__dirname,'./public/')));
-//app.use(express.static(path.join(__dirname,'./public/prod')));
-
-
 // Mongoose Promise
 mongoose.Promise = global.Promise;
-
 // Mongoose Database connection (with auto-increment initialization)
 var connection = mongoose.connect(app.config.MONGO_URI);
 mongoose.connection.on('error', function(err) {
     console.log('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');
 });
 
-/*var promise = mongoose.connect(app.config.MONGO_URI, {
-  useMongoClient: true,
-});
-
-promise.then(function(db) {
-  //console.log("DB LOG: ",db)
-});
-*/
 
 /* CORS Setup */
 var allowCrossDomain = function(req, res, next) {
@@ -73,25 +55,9 @@ var allowCrossDomain = function(req, res, next) {
 
     next();
 }
-
 app.use(allowCrossDomain);
-
-
-
-
-// Common Functions' reference(Define common functions for the whole projects in this file)
-app.common = require('./joyi/functions/common');
-
-// Data Access Layer reference
-app.crud = require('./dal/crud');
-
- 
 // API Router reference
 require('./router.js')(app);
-
-// Models reference
-//require('./models')(app, mongoose);
-
 // Server Start
 var listener = app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

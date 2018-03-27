@@ -21,7 +21,7 @@ exports.postLogin = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
       if (err) { return next(err); }
       if (!user) {
-        req.flash('errors', info);
+        res.send('errors', info);
         return res.send(err)
       }
       req.logIn(user, (err) => {
@@ -46,22 +46,20 @@ exports.postLogin = (req, res, next) => {
     const errors = req.validationErrors();
   
     if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/signup');
+      res.send( errors);
     }
   
     const user = new User({
       email: req.body.email,
       password: req.body.password,
-      role : req.body.proffession,
+      role : req.body.role,
       username : req.body.username
     });
   
     User.findOne({ email: req.body.email }, (err, existingUser) => {
       if (err) { return next(err); }
       if (existingUser) {
-        req.flash('errors', { msg: 'Account with that email address already exists.' });
-        return res.redirect('/signup');
+        res.send('Account with that email address already exists.' );
       }
       user.save((err) => {
         if (err) { return next(err); }
@@ -84,8 +82,8 @@ exports.postLogin = (req, res, next) => {
     const errors = req.validationErrors();
   
     if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/account');
+      res.send('errors');
+      return
     }
   
     User.findById(req.user.id, (err, user) => {
@@ -98,7 +96,7 @@ exports.postLogin = (req, res, next) => {
       user.save((err) => {
         if (err) {
           if (err.code === 11000) {
-            req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
+            res.send('The email address you have entered is already associated with an account.' );
             return res.redirect('/account');
           }
           return next(err);
@@ -114,8 +112,8 @@ exports.postLogin = (req, res, next) => {
 exports.getActors = (req, res, next) => {
     console.log(req.params);
     
-    User.find({ proffession: req.params.role }, (err, body) => {
-     if (err) { return next(err); }
+    User.find({ role: req.params.role }, (err, body) => {
+     if (err) { res.send("error in finding data"); }
      if (body) {
       console.log(body);
       res.send(body)
@@ -124,6 +122,17 @@ exports.getActors = (req, res, next) => {
    });
    };
    
+
+exports.getSingleActor = (req,res,next) => {
+  User.findOne({ role: req.params.role, _id: req.params.id }, (err, body) => {
+    if (err) { res.send("error in finding data");}
+    if (body) {
+     console.log(body);
+     res.send(body)
+     
+    }
+  });
+};
 
    exports.postUpdatePassword = (req, res, next) => {
     req.assert('password', 'Password must be at least 4 characters long').len(4);
