@@ -27,6 +27,12 @@ cpApp.config(function ($stateProvider, $urlRouterProvider) {
       controller: 'searchresCtrl'
     })
 
+    .state('details', {
+      url: '/details',
+      templateUrl: 'templates/details.html',
+      controller: 'detailsCtrl'
+    })
+
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',

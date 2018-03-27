@@ -1,0 +1,53 @@
+<div class="col-sm-12" style="background-color:#f1f0f5;height:100vh">
+    <div class="container">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="row" style="margin-top:5%;background-color:white;padding:30px">
+                <div class="col-xs-2">
+                    <img src="images/doc.png" style="max-height:150px;width:auto" alt="">
+                </div>
+                <div class="col-xs-6 col-xs-offset-1">
+                    <div class="row" style="padding-left:0px;">
+                        <span style="color:grey;font-size:25px;font-weight:600">
+                                {{detailData.title}}
+                        </span>
+                    </div>
+                    <div class="row" style="padding-left:0px">
+                        <span style="color:grey;font-size:18px;font-weight:600">
+                                {{detailData.subTitle}}
+                        </span>
+                    </div>
+                    <div class="row" style="padding-left:0px;">
+                        <span style="color:grey;font-size:15px;font-weight:400;text-align:justify">
+                            {{detailData.address}}
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-3" style="position: absolute;top: 17%;left: 77%;">
+                    <button style="background-color: #48bff2;border: 0px;color: white;padding: 20px;font-size: 18px"> <span class="glyphicon glyphicon-earphone" style="font-size:22px;margin-right:5px"></span> CALL NOW</button>
+                </div>
+            </div>
+            <div class="row" style="margin-top:1%;background-color:white;padding:30px">
+                <div class="col-xs-12">
+                    <div class="row" style="padding-left:0px;">
+                        <span style="color:grey;font-size:18px;font-weight:600">
+                                {{detailData.title}}
+                        </span>
+                    </div>
+                    <div class="row" style="padding-left:0px;text-align:justify">
+                        <span style="color:grey;font-size:15px;font-weight:400;text-align:justify;">
+                            {{detailData.description}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:1%;background-color:white;padding:30px">
+                <div class="col-xs-12">
+                    <div ng-repeat = "item in detailData.imgItems" class="col-sm-2" style="margin-top:1%;padding-bottom:0px">
+                        <img ng-src="{{item.url}}" class="img-thumbnail" style="border:0px;margin:0px;padding:0px;width: auto;border: 0px;border-radius: 5px;"
+                            alt="Cinque Terre">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

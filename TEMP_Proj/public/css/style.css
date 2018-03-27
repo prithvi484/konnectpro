@@ -11,3 +11,10 @@
     border:1px;
     background:transparent;
 }
+
+.title-text{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 5%;
+    color: #252b34;
+}
