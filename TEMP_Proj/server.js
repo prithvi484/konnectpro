@@ -9,14 +9,20 @@ require('es6-promise').polyfill();
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var events = require('events');
-var nodemailer = require('nodemailer');
+const flash = require('express-flash');
 
+var nodemailer = require('nodemailer');
+const passport = require('passport');
+
+const expressValidator = require('express-validator');
 // Express framework initialization
 var app = express();
-
+app.use(expressValidator());
 // Logger initialization
 app.use(logger('dev'));
-
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 // Configuration reference
 //app.config = require('./configs/localConfig.js'); // Local Servers
 //app.config = require('./configs/devConfig.js'); // Stagiging/Test Server

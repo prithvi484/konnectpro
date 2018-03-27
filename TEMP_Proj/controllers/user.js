@@ -2,6 +2,8 @@ const bluebird = require('bluebird');
 const crypto = bluebird.promisifyAll(require('crypto'));
 const nodemailer = require('nodemailer');
 const passport = require('passport');
+const expressValidator = require('express-validator');
+
 const User = require('../schemas/users/user');
 
 
@@ -51,7 +53,7 @@ exports.postLogin = (req, res, next) => {
     const user = new User({
       email: req.body.email,
       password: req.body.password,
-      proffession : req.body.proffession,
+      role : req.body.proffession,
       username : req.body.username
     });
   
