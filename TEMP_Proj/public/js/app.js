@@ -1,4 +1,4 @@
-var cpApp = angular.module('cpApp', ['ui.router']);
+var cpApp = angular.module('cpApp', ['ui.router','ngMaterial']);
 
 cpApp.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
