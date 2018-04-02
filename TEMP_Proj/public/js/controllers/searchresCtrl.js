@@ -1,8 +1,12 @@
-cpApp.controller('searchresCtrl', ['$scope', '$state', function ($scope, $state) {
+cpApp.controller('searchresCtrl', ['$scope', '$state','$http', function ($scope, $state,$http) {
 	console.log("SEARCH RESULT CONTROLLER");
 	$scope.router = function(_id){
 		$state.go('details');
 	}
+	var url = "http://localhost:4200/user/doctor"
+	$http.get(url).success(function(data){
+        console.log("data",data)
+    });
 	$scope.data = [
 		{
 			"_id": "5ab5f93100d0071bf46b3393",
