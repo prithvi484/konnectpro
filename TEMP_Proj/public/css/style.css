@@ -18,3 +18,23 @@
     margin-top: 5%;
     color: #252b34;
 }
+.login-input{
+	border: none;
+    border-bottom: 1px solid;
+    background: transparent;
+    border-radius: 0px;
+    box-shadow: none;
+	width: 100%;
+	
+	
+	display: block;
+    height: 42px;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: transparent;
+    background-image: none;	
+}
+
+
