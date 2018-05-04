@@ -26,6 +26,37 @@ cpApp.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/searchres.html',
       controller: 'searchresCtrl'
     })
+    .state('doctors', {
+      url: '/doctors',
+      templateUrl: 'templates/actors/doctors.html',
+      controller: 'doctorsCtrl'
+    })
+    .state('plumbers', {
+      url: '/plumbers',
+      templateUrl: 'templates/actors/plumbers.html',
+      controller: 'plumbersCtrl'
+    })
+    .state('carpenters', {
+      url: '/carpenters',
+      templateUrl: 'templates/actors/carpenters.html',
+      controller: 'carpentersCtrl'
+    })
+    .state('architects', {
+      url: '/architects',
+      templateUrl: 'templates/actors/architects.html',
+      controller: 'architectsCtrl'
+    })
+    .state('painters', { 
+      url: '/painters',
+      templateUrl: 'templates/actors/painter.html',
+      controller: 'painterCtrl'
+    })
+    .state('electricians', {
+      url: '/electricians',
+      templateUrl: 'templates/actors/electricians.html',
+      controller: 'electriciansCtrl'
+    })
+
 
     .state('details', {
       url: '/details',

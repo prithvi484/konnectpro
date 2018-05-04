@@ -1,0 +1,11 @@
+#Folders
+node_modules/
+coverage/
+.idea/
+/public/Controllers/apssdc/build/
+/public/stylesheets/build/
+# files
+*.log
+*.db
+*.DS_Store
+/routes/common/temp
