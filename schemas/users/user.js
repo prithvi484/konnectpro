@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   passwordResetToken: String,
   passwordResetExpires: Date,
   role : String,
+  category : String,
   username : String,
   mobile: Number
 }, { timestamps: true });

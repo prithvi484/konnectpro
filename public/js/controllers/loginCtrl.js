@@ -1,4 +1,4 @@
-cpApp.controller('loginCtrl', ['$scope', '$state', function ($scope, $state) {
+cpApp.controller('loginCtrl', ['$scope', '$state', 'userService',function ($scope, $state, userService) {
 	console.log("LOGIN CONTROLLER");
 
 	$scope.logindetails = {
@@ -17,13 +17,17 @@ cpApp.controller('loginCtrl', ['$scope', '$state', function ($scope, $state) {
 	  $scope.signUp = {
 		  "name":"",
 		  "email":"",
-		  "listOption":"",
+		  "role":"",
 		  "password":"",
 		  "confirmPassword":""
 	  }
 
 	  $scope.register = function(){
 		console.log($scope.signUp);
+		userService.createUser($scope.signUp)
+		.then(data=>{
+			console.log(data)
+		})
 
 	  }
 }]);

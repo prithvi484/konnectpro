@@ -46,20 +46,21 @@ exports.postLogin = (req, res, next) => {
     const errors = req.validationErrors();
   
     if (errors) {
-      res.send( errors);
+      return res.send( errors);
     }
   
     const user = new User({
       email: req.body.email,
       password: req.body.password,
       role : req.body.role,
-      username : req.body.username
+      username : req.body.username,
+      category: req.body.category
     });
   
     User.findOne({ email: req.body.email }, (err, existingUser) => {
       if (err) { return next(err); }
       if (existingUser) {
-        res.send('Account with that email address already exists.' );
+        return res.send('Account with that email address already exists.' );
       }
       user.save((err) => {
         if (err) { return next(err); }
@@ -111,8 +112,17 @@ exports.postLogin = (req, res, next) => {
   
 exports.getActors = (req, res, next) => {
     console.log(req.params);
-    
-    User.find({ role: req.params.role }, (err, body) => {
+    const categories = req.query.categories;
+    const filter = {
+      role: req.params.role
+    };
+    if(categories && categories.length){
+      filter.category = {
+        $in : categories
+      }
+    }
+    User.find(filter, (err, body) => {
+      // User.find({ role: req.params.role }, (err, body) => {
      if (err) { res.send("error in finding data"); }
      if (body) {
       console.log(body);
@@ -122,6 +132,21 @@ exports.getActors = (req, res, next) => {
    });
    };
    
+  
+exports.getCategories = (req, res)=>{
+  console.log(req.params)
+  const role = req.params.role;
+  User.distinct('category', {
+    role
+  })
+  .then(data=>{
+    console.log(data)
+    return res.send(data);
+  })
+  .catch(err=>{
+    res.send(err)
+  })
+}
 
 exports.getSingleActor = (req,res,next) => {
   User.findOne({ role: req.params.role, _id: req.params.id }, (err, body) => {

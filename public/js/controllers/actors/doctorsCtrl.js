@@ -1,14 +1,25 @@
-cpApp.controller('doctorsCtrl', ['$scope', '$state','$http', function ($scope, $state,$http) {
-	console.log("doctors RESULT CONTROLLER");
+// import * as faker from 'faker'
+// import{ name } from 'faker/locale/en'
+// var {name} = require('faker');
+cpApp.controller('doctorsCtrl', ['$scope', '$state','$http', 'userService', function ($scope, $state,$http, userService) {
 	$scope.router = function(_id){
 		$state.go('details');
 	}
-	var url = "http://localhost:4200/user/doctor"
-	$http.get(url).success(function(data){
-		console.log("data",data)
-		$scope.data = data;
-	});
-	
+	$scope.categories =[];
+	$scope.categoryOption = {};
+	userService.getCategories('doctor')
+	.then(categories=>{
+		categories.map(category=>$scope.categoryOption[category]=false);
+		$scope.categories = categories;
+	})
+	$scope.categoryRefresh = ()=>{
+		const keys = Object.keys($scope.categoryOption).filter(cat=>$scope.categoryOption[cat])
+		userService.getActors('doctor', keys)
+		.then(data=>{
+			$scope.data = data
+		})
+	}
+	$scope.categoryRefresh();
 	$scope.hotels = [
 		{
 			name: 'the taj hotel',

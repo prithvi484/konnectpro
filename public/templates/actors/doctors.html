@@ -1,4 +1,24 @@
-<div class="col-sm-12" style="background-color:#f1f0f5;height:100%">
+<div class="col-sm-4">
+    <!-- <ui>
+        <li ng-repeat="category in categories">
+            {{category.name}}
+        </li>
+    </ui> -->
+    <div class="checkbox"  ng-repeat="category in categories">
+            <label style="font-size: 1.5em">
+                <input type="checkbox" ng-model="categoryOption[category]" value="" checked ng-change="categoryRefresh()">
+                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                {{category}}
+            </label>
+        </div>
+    <!-- <div >
+           
+        <input type="checkbox"> {{category.name}}
+       
+    </div> -->
+</div>
+</div>
+<div class="col-sm-8" style="background-color:#f1f0f5;height:100%">
     <div class="container">
         
         <div class="row" style="margin-top: 2%;">

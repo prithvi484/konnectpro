@@ -21,6 +21,8 @@ app.post('/signup', userController.postSignup);
 // app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 // app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/user/:role',userController.getActors)
+app.get('/user/:role/categories', userController.getCategories)
+
 app.get('/user/:role/:id',userController.getSingleActor)
 
 
