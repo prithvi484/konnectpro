@@ -46,11 +46,23 @@
     font-weight: bold;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
 .content-right{
     right:0
 }
 
 .display-inline{
     display: inline;
+}
+
+.color-blue{
+    color: blue;
+}
+
+.cursor-pointer{
+    cursor: pointer;
 }
 

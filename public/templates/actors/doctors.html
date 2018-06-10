@@ -11,8 +11,22 @@
             </li> -->
             <li class="list-group-item">
                 <div class="row">
+                        <div class="col-md-8">
+                                <h4 class="text-bold">
+                                        FILTERS
+                                    </h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="color-blue cursor-pointer" ng-click="clearFilters()">CLEAR ALL</h5>
+                        </div>
+                </div>
+                
+               
+            </li>
+            <li class="list-group-item">
+                <div class="row" ng-click="onToggleFilter('doctors')">
                         <h5 class="category-list-header display-inline col-md-11">DOCTORS</h5>
-                        <ng-contenter ng-click="onToggleFilter('doctors')">
+                        <ng-contenter>
                                 <span ng-if="!filterDisplayStatus['doctors']" class="glyphicon glyphicon-chevron-right content-right col-md-1"></span>
                                 <span ng-if="filterDisplayStatus['doctors']" class="glyphicon glyphicon-chevron-down content-right col-md-1"></span>
                         </ng-contenter>
@@ -20,16 +34,17 @@
                 </div>
                 <div ng-if="filterDisplayStatus['doctors']" class="checkbox"  ng-repeat="category in categories">
                     <label style="font-size: 1.5em">
-                        <input type="checkbox" ng-model="categoryOption[category]" value="" checked ng-change="categoryRefresh()">
+                        <input type="checkbox" ng-model="categoryOption[category]" value="" checked ng-change="filterRefresh()">
                         <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                         <h5 class="category-list-text">{{category}}</h5>
                     </label>
                 </div>
+                
             </li>
             <li class="list-group-item">
-                    <div class="row">
+                    <div class="row" ng-click="onToggleFilter('location')">
                             <h5 class="category-list-header display-inline col-md-11">LOCATION</h5>
-                            <ng-contenter ng-click="onToggleFilter('location')">
+                            <ng-contenter>
                                     <span ng-if="!filterDisplayStatus['location']" class="glyphicon glyphicon-chevron-right content-right col-md-1"></span>
                                     <span ng-if="filterDisplayStatus['location']" class="glyphicon glyphicon-chevron-down content-right col-md-1"></span>
                             </ng-contenter>
@@ -37,12 +52,46 @@
                     </div>
                     <div ng-if="filterDisplayStatus['location']" class="checkbox"  ng-repeat="location in locations">
                         <label style="font-size: 1.5em">
-                            <input type="checkbox" ng-model="locationOption[location]" value="" checked ng-change="locationRefresh()">
+                            <input type="checkbox" ng-model="locationOption[location]" value="" checked ng-change="filterRefresh()">
                             <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                             <h5 class="category-list-text">{{location}}</h5>
                         </label>
                     </div>
                 </li>
+                <li class="list-group-item">
+                        <div class="row" ng-click="onToggleFilter('experience')">
+                                <h5 class="category-list-header display-inline col-md-11">EXPERIENCE</h5>
+                                <ng-contenter>
+                                        <span ng-if="!filterDisplayStatus['experience']" class="glyphicon glyphicon-chevron-right content-right col-md-1"></span>
+                                        <span ng-if="filterDisplayStatus['experience']" class="glyphicon glyphicon-chevron-down content-right col-md-1"></span>
+                                </ng-contenter>
+                                
+                        </div>
+                        <div ng-if="filterDisplayStatus['experience']" class="checkbox"  ng-repeat="experience in experiences">
+                            <label style="font-size: 1.5em">
+                                <input type="checkbox" ng-model="experienceOption[experience]" value="" checked ng-change="filterRefresh()">
+                                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                <h5 class="category-list-text">{{experience}}</h5>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                            <div class="row" ng-click="onToggleFilter('availability')">
+                                    <h5 class="category-list-header display-inline col-md-11">AVAILABILITY</h5>
+                                    <ng-contenter>
+                                            <span ng-if="!filterDisplayStatus['availability']" class="glyphicon glyphicon-chevron-right content-right col-md-1"></span>
+                                            <span ng-if="filterDisplayStatus['availability']" class="glyphicon glyphicon-chevron-down content-right col-md-1"></span>
+                                    </ng-contenter>
+                                    
+                            </div>
+                            <div ng-if="filterDisplayStatus['location']" class="checkbox"  ng-repeat="availability in availabilities">
+                                <label style="font-size: 1.5em">
+                                    <input type="checkbox" ng-model="availabilityOption[availability]" value="" checked ng-change="filterRefresh()">
+                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                    <h5 class="category-list-text">{{availability}}</h5>
+                                </label>
+                            </div>
+                        </li>
         </ul>
     <!-- <div >
            

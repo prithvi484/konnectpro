@@ -9,14 +9,28 @@ cpApp.controller('doctorsCtrl', ['$scope', '$state','$http', 'userService', func
     $scope.categoryOption = {};
     $scope.locationOption={};
     $scope.locations = [];
+    $scope.experiences = [];
+    $scope.availabilities = [];
 	userService.getCategories('doctor')
 	.then(categories=>{
 		categories.map(category=>$scope.categoryOption[category]=false);
 		$scope.categories = categories;
     })
     $scope.locationRefresh = ()=>{
-        
+
     }
+
+    $scope.clearFilters = () => {
+        $scope.categoryOption = {};
+        $scope.filterRefresh();
+    }
+    $scope.filterRefresh = ()=>{
+		const keys = Object.keys($scope.categoryOption).filter(cat=>$scope.categoryOption[cat])
+		userService.getActors('doctor', keys)
+		.then(data=>{
+			$scope.data = data
+		})
+	}
 	$scope.categoryRefresh = ()=>{
 		const keys = Object.keys($scope.categoryOption).filter(cat=>$scope.categoryOption[cat])
 		userService.getActors('doctor', keys)
