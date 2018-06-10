@@ -66,3 +66,27 @@
     cursor: pointer;
 }
 
+.background-rectangle{
+    background-image: url('images/home-page/Rectangle 9.png');
+    position: fixed;
+}
+
+
+.position-realtive{
+    position: relative;
+}
+
+.min-height-rectangle-img{
+    min-height: 150px;
+    padding-top: 40px;
+    padding-bottom:20px;
+    padding-right: 20px;
+}
+
+.padding-top-10{
+    padding-top: 10px
+}
+
+.text-white{
+    color: white;
+}
