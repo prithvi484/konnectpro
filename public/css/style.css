@@ -78,15 +78,21 @@
 
 .min-height-rectangle-img{
     min-height: 150px;
+    max-width: 160px;
     padding-top: 40px;
     padding-bottom:20px;
     padding-right: 20px;
 }
 
-.padding-top-10{
+.padding-top-10{    
     padding-top: 10px
 }
 
 .text-white{
     color: white;
+}
+
+.rectangle-dimention{
+    min-width: 160px;
+    min-height: 150px;
 }
