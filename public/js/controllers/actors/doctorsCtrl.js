@@ -6,12 +6,17 @@ cpApp.controller('doctorsCtrl', ['$scope', '$state','$http', 'userService', func
 		$state.go('details');
 	}
 	$scope.categories =[];
-	$scope.categoryOption = {};
+    $scope.categoryOption = {};
+    $scope.locationOption={};
+    $scope.locations = [];
 	userService.getCategories('doctor')
 	.then(categories=>{
 		categories.map(category=>$scope.categoryOption[category]=false);
 		$scope.categories = categories;
-	})
+    })
+    $scope.locationRefresh = ()=>{
+        
+    }
 	$scope.categoryRefresh = ()=>{
 		const keys = Object.keys($scope.categoryOption).filter(cat=>$scope.categoryOption[cat])
 		userService.getActors('doctor', keys)
@@ -57,7 +62,16 @@ cpApp.controller('doctorsCtrl', ['$scope', '$state','$http', 'userService', func
 			type: 'luxury',
 			price: 7500
 		}
-	];   
+    ];
+    $scope.filterDisplayStatus = {
+        doctors: false,
+        location: false,
+        experience: false,
+        availability: false
+    }
+    $scope.onToggleFilter = function(filterName){
+        $scope.filterDisplayStatus[filterName] = !$scope.filterDisplayStatus[filterName]
+    }
 	// $scope.data = [
 	// 	{
 	// 		"_id": "5ab5f93100d0071bf46b3393",

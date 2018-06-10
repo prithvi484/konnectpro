@@ -37,4 +37,20 @@
     background-image: none;	
 }
 
+.category-list-text{
+    margin-top: 5px;
+}
+
+.category-list-header{
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.content-right{
+    right:0
+}
+
+.display-inline{
+    display: inline;
+}
 

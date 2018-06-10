@@ -4,13 +4,46 @@
             {{category.name}}
         </li>
     </ui> -->
-    <div class="checkbox"  ng-repeat="category in categories">
-            <label style="font-size: 1.5em">
-                <input type="checkbox" ng-model="categoryOption[category]" value="" checked ng-change="categoryRefresh()">
-                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                {{category}}
-            </label>
-        </div>
+    
+    <ul class="list-group">
+            <!-- <li class="list-group-item">
+                <h5 class="category-list-header">DOCTORS</h5><span class="glyphicon glyphicon-chevron-right content-right"></span>
+            </li> -->
+            <li class="list-group-item">
+                <div class="row">
+                        <h5 class="category-list-header display-inline col-md-11">DOCTORS</h5>
+                        <ng-contenter ng-click="onToggleFilter('doctors')">
+                                <span ng-if="!filterDisplayStatus['doctors']" class="glyphicon glyphicon-chevron-right content-right col-md-1"></span>
+                                <span ng-if="filterDisplayStatus['doctors']" class="glyphicon glyphicon-chevron-down content-right col-md-1"></span>
+                        </ng-contenter>
+                        
+                </div>
+                <div ng-if="filterDisplayStatus['doctors']" class="checkbox"  ng-repeat="category in categories">
+                    <label style="font-size: 1.5em">
+                        <input type="checkbox" ng-model="categoryOption[category]" value="" checked ng-change="categoryRefresh()">
+                        <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                        <h5 class="category-list-text">{{category}}</h5>
+                    </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                    <div class="row">
+                            <h5 class="category-list-header display-inline col-md-11">LOCATION</h5>
+                            <ng-contenter ng-click="onToggleFilter('location')">
+                                    <span ng-if="!filterDisplayStatus['location']" class="glyphicon glyphicon-chevron-right content-right col-md-1"></span>
+                                    <span ng-if="filterDisplayStatus['location']" class="glyphicon glyphicon-chevron-down content-right col-md-1"></span>
+                            </ng-contenter>
+                            
+                    </div>
+                    <div ng-if="filterDisplayStatus['location']" class="checkbox"  ng-repeat="location in locations">
+                        <label style="font-size: 1.5em">
+                            <input type="checkbox" ng-model="locationOption[location]" value="" checked ng-change="locationRefresh()">
+                            <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                            <h5 class="category-list-text">{{location}}</h5>
+                        </label>
+                    </div>
+                </li>
+        </ul>
     <!-- <div >
            
         <input type="checkbox"> {{category.name}}
@@ -27,6 +60,7 @@
         </div>
           <!-- <div class="col-xs-1"> hello</div> -->
         <div class="col-xs-9">
+
             <div class="row" ng-repeat="item in data | filter:search.type1 | filter:search.type2" style="margin-bottom:1%" ng-click="router(item._id)">
                 <div class="col-xs-12" style="background-color:white;padding: 10px;">
 

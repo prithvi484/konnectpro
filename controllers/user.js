@@ -111,7 +111,6 @@ exports.postLogin = (req, res, next) => {
 
   
 exports.getActors = (req, res, next) => {
-    console.log(req.params);
     const categories = req.query.categories;
     const filter = {
       role: req.params.role
@@ -122,12 +121,9 @@ exports.getActors = (req, res, next) => {
       }
     }
     User.find(filter, (err, body) => {
-      // User.find({ role: req.params.role }, (err, body) => {
-     if (err) { res.send("error in finding data"); }
+     if (err) { return res.send("error in finding data"); }
      if (body) {
-      console.log(body);
-      res.send(body)
-      
+      return res.send(body)
      }
    });
    };
