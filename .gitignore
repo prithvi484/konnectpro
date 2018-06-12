@@ -8,4 +8,6 @@ coverage/
 *.log
 *.db
 *.DS_Store
+node_modules
+node_modules/
 /routes/common/temp
