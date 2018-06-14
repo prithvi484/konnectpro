@@ -46,15 +46,45 @@ cpApp.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/actors/architects.html',
       controller: 'architectsCtrl'
     })
+    .state('lawyers', {
+      url: '/lawyers',
+      templateUrl: 'templates/actors/lawyers.html',
+      controller: 'lawyersCtrl'
+    })
+    .state('engineers', {
+      url: '/engineers',
+      templateUrl: 'templates/actors/engineers.html',
+      controller: 'engineersCtrl'
+    })
+    .state('academics', {
+      url: '/academics',
+      templateUrl: 'templates/actors/academics.html',
+      controller: 'academicsCtrl'
+    })
     .state('painters', { 
       url: '/painters',
       templateUrl: 'templates/actors/painter.html',
       controller: 'painterCtrl'
     })
+    .state('entertainment', { 
+      url: '/entertainment',
+      templateUrl: 'templates/actors/entertainment.html',
+      controller: 'entertainmentCtrl'
+    })
     .state('electricians', {
       url: '/electricians',
       templateUrl: 'templates/actors/electricians.html',
       controller: 'electriciansCtrl'
+    })
+    .state('accountants', {
+      url: '/accountants',
+      templateUrl: 'templates/actors/accountants.html',
+      controller: 'accountantsCtrl'
+    })
+    .state('astrologers', {
+      url: '/astrologers',
+      templateUrl: 'templates/actors/astrologers.html',
+      controller: 'astrologersCtrl'
     })
 
 

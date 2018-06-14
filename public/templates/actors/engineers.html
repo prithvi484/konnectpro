@@ -1,0 +1,67 @@
+<div class="col-sm-12" style="background-color:#f1f0f5;height:100%">
+    <div class="container">
+        <div class="row" style="margin-top: 2%;">
+            <h4 style="font-size: 17px;
+   color: grey;">10 matches found for Engineers</h4>
+        </div>
+        <div class="col-xs-9">
+            <div class="row" ng-repeat="item in data" style="margin-bottom:1%" ng-click="router(item._id)">
+                <div class="col-xs-12" style="background-color:white;padding: 10px;">
+
+                    <div class="col-sm-2" style="margin-top:1%;padding-bottom:0px">
+                        <img ng-src="{{item.image}}" class="img-thumbnail" style="border:0px;margin:0px;padding:0px;width: auto;border: 0px;border-radius: 5px;"
+                            alt="Cinque Terre">
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="col-xs-12" style="margin-top:1%;margin-bottom:2%;text-align:justify;color:#48bff2;font-weight: 600;">{{item.username}}</div>
+                        <div class="col-xs-12" style="margin-top:1%;margin-bottom:2%;text-align:justify;font-size: 13px">{{item.description}}</div>
+                        <div class="col-xs-12" style="margin-top:2%;margin-bottom:1%">
+                            <div ng-repeat="imgItem in item.subImages" class="col-xs-2">
+                                <img ng-src="{{imgItem.url}}" class="img-rounded" style="width:auto;height:50px" alt="Cinque Terre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3" style="margin-top:1%;padding-left:0px">
+                        <div class="col-xs-12" style="margin-top:7%">
+                            <span class="glyphicon glyphicon-thumbs-up" style="margin-right:5px;color: #48bff2;font-size: 18px;">
+                            </span>
+                            <span style="color:#789e70;font-size: 13px">
+                                99%
+                            </span>
+                            <span style="font-size: 13px">
+                                (997 Voltes)
+                            </span>
+                        </div>
+                        <div class="col-xs-12" style="margin-top: 7%;padding-right:0px">
+                            <span class="glyphicon glyphicon-map-marker" style="margin-right:5px;color: #48bff2;font-size: 18px;">
+                            </span>
+                            <span style="text-align:justify;font-size: 11px">
+                                {{item.address}}
+                            </span>
+                        </div>
+                        <div class="col-xs-12" style="margin-top:7%">
+                            <span class="glyphicon glyphicon-time" style="margin-right:5px;color: #48bff2;font-size: 18px;">
+                            </span>
+                            <span style="color:#789e70;font-size: 13px">
+                                Available Today
+                            </span>
+                        </div>
+                        <div class="col-xs-12" style="margin-top:8%">
+                            <button style="background-color: #48bff2;border: 0px;color: white;padding: 10px;font-size: 12px">
+                                BOOK APPOINTMENT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-xs-offset-1">
+            <div class="col-xs-12 pull-left" style="margin-left: -10%;padding-left: 0px;margin-bottom:4%">Popular Links</div>
+            <div class="row" ng-repeat="link in links" style="margin-bottom:6%">
+                <a href="#" style="color:grey">{{link.title}}
+                    <a>
+            </div>
+
+        </div>
+    </div>
+</div>

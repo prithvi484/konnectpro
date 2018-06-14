@@ -1,12 +1,205 @@
-<h1>ABOUT</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        padding: 30px;
+        text-align: justify;
+        font-size: 2em;
+        font-family: serif;
+    }
+
+    .our-team{
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: 1;
+    position: relative;
+}
+.our-team .pic{
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.our-team .pic:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .pic:after{ opacity: 1; }
+.our-team .pic img{
+    width: 100%;
+    height: auto;
+}
+.our-team .social{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .social{ opacity: 1; }
+.our-team .social li{ display: inline-block; }
+.our-team .social li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    font-size: 15px;
+    color: #fff;
+    margin-right: 10px;
+    transition: all 0.5s ease 0s;
+}
+.our-team .social li a:hover{
+    background: #fff;
+    color: #000;
+}
+.our-team .team-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dotted #ddd;
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .team-content{ border: 2px dotted #00adae; }
+.our-team .team-info{
+    width: 100%;
+    color: #464646;
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+}
+.our-team .title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #464646;
+    margin: 0 0 5px 0;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .title{ color: #00adae; }
+.our-team .post{
+    display: block;
+    font-size: 14px;
+    color: #464646;
+}
+
+hr {
+    border: 1px solid #000;
+}
+
+</style>
+
+
+<!-- <h1>ABOUT</h1> -->
 
 <div>
-    <h2> 
-    Connect Pro is a product of Akarmaxs Konnect pro private limited.The main vision of this product is connect people basis their Profession. There are different categories and sub categories under Connect Pro of all the professions present in the market today. Using this data users/consumers can get the right fit for the profession they are looking for based on the individuals Academics, Work Experience, Location and the skill sets they possess.There are different filters available within the Product which makes the search easier for the Users/Consumers looking for the right candidate for their organisation.
+    <p> 
+    Connect Pro is a product of Akarmaxs Konnect pro private limited.The main vision of this product is connect people basis their Profession. There are different categories and sub categories under Connect Pro of all the professions present in the market today. Using this data users/consumers can get the right fit for the profession they are looking for based on the individuals Academics, Work Experience, Location and the skill sets they possess.There are different filters available within the Product which makes the search easier for the Users/Consumers looking for the right candidate for their organisation.</p>
 
-    At an Individual level anybody can register themselves on the website post their graduation and can get noticed for Job offers.
-    Users can also book appointments using this product with the doctors through different search criteria ( Experience, Specialisation and Location based search).
+    <p>At an Individual level anybody can register themselves on the website post their graduation and can get noticed for Job offers.
+    Users can also book appointments using this product with the doctors through different search criteria ( Experience, Specialisation and Location based search).</p>
     
-    Currently we are focusing on the 7-8 main categories which includes :
+    <p>Currently we are focusing on the 7-8 main categories which includes :
     Medical services, Engineers, Legal consultants, Entertainment, Spirituality and Academics Etc.
-    This product acts as one single platform connecting users/consumers to the service providers and also the sub-categories within the main categories will help users fetch the correct results based on their search query or filters used for the search</h2></div>
+    This product acts as one single platform connecting users/consumers to the service providers and also the sub-categories within the main categories will help users fetch the correct results based on their search query or filters used for the search</p>
+</div><hr>
+
+<div class="container">
+    <h1 style="text-align:center"> OUR TEAM </h1>
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="images/md.jpeg">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Sneha Rakhesh</h3>
+                        <span class="post">Managing Director</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="images/dummy.jpg">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Vishwanath B</h3>
+                        <span class="post">Web Designer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="images/sharath.jpg">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Sharath K R</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="images/dummy.jpg">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Chidanand</h3>
+                        <span class="post">Web Designer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
